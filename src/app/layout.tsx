@@ -3,6 +3,7 @@ import { Gabarito as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
+import { Toaster } from 'sonner';
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -24,6 +25,11 @@ export default function RootLayout({
       <body className={cn("min-h-screen font-sans antialiased", fontSans.variable)}>
         <Header />
         {children}
+        <Toaster
+          toastOptions={{ className: 'font-sans !text-sm' }}
+          position="top-center"
+          richColors
+        />
       </body>
     </html>
   );
