@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning data-theme="cupcake">
+    <html lang="en" suppressHydrationWarning data-theme="signal">
       <body className={cn("min-h-screen font-sans antialiased", fontSans.variable)}>
         {children}
       </body>
