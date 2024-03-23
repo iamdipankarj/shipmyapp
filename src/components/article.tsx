@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dayjs from 'dayjs'
 import { cn } from "@/lib/utils"
+import { Category } from '@/components/category';
 
 interface ArticleProps extends React.HTMLAttributes<HTMLDivElement> {
   heading?: ReactNode | null
@@ -46,7 +47,7 @@ export function Article({
       </div>
       <div className="flex gap-2 items-center mt-4 flex-wrap">
         {categories.map((category, _) => 
-          <Link key={_} href={`/blog/category/${category.toLowerCase()}`} className="badge [&:not(:hover)]:badge-outline badge-success hover:text-white text-xs font-medium tracking-wider uppercase text-nowrap whitespace-nowrap">{category}</Link>
+          <Category key={_} slug={category.toLowerCase().replaceAll(" ", "-")}>{category}</Category>
         )}
         <span className="text-base-content/30 inline-flex text-xs">&mdash;</span>
         <span className="text-base-content/30 inline-flex text-xs">2 mins read</span>
