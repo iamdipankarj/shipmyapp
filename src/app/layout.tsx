@@ -4,16 +4,14 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Toaster } from 'sonner';
+import { getMetaData, getStructuredData } from "@/lib/seo";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 })
 
-export const metadata: Metadata = {
-  title: "ShipMyApp",
-  description: "A NextJS Boilerplat for Startups",
-};
+export const metadata: Metadata = getMetaData();
 
 export default function RootLayout({
   children,
@@ -22,6 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning data-theme="signal">
+      <head>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#41c289" />
+        <script
+          key="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getStructuredData()) }}
+        />
+      </head>
       <body className={cn("min-h-screen font-sans antialiased", fontSans.variable)}>
         <Header />
         {children}
