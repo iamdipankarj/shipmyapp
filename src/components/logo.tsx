@@ -9,14 +9,12 @@ export function Logo({
   className
 }: LogoProps) {
   return (
-    <Link className={cn(className)} href="/">
+    <Link className={cn("inline-flex w-48", className)} href="/">
       <Image
-        src="/logo.png"
+        src="/logo-light.png"
         alt="ShipMyApp"
-        className="w-28 md:w-48"
         width={1675}
         height={512}
-        layout="fixed"
         priority
       />
     </Link>

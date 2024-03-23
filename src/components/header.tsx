@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
+import { Hamburger } from "@/components/hamburger";
 
 export function Header() {
   return (
@@ -16,7 +17,8 @@ export function Header() {
           See Components
         </Link>
       </div>
-      <button className="btn btn-success">Get ShipMyApp</button>
+      <Hamburger />
+      {/* <button className="btn btn-success">Get ShipMyApp</button> */}
     </header>
   )
 }

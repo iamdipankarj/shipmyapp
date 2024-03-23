@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning data-theme="halloween">
+    <html lang="en" suppressHydrationWarning data-theme="light">
       <head>
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#41c289" />
         <script
