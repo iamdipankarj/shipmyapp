@@ -2,7 +2,7 @@ export default function TOS() {
   return (
     <main className="flex min-h-screen flex-col items-center py-16">
       <div className="container mx-auto px-4 py-6 prose">
-        <h1>Terms of Service</h1>
+        <h1>Privacy Policy</h1>
 
         <h2>1. Acceptance of Terms</h2>
         <p>By accessing or using the Platform, you acknowledge that you have read, understood, and agree to be bound by these Terms, as well as any additional terms and policies referenced herein or made available through the Platform.</p>

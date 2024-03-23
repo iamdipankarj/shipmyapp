@@ -13,8 +13,11 @@ export function Header() {
         <Link className="link link-hover hidden sm:inline" href="#demo">
           Demo
         </Link>
-        <Link className="link link-hover" href="#components">
-          See Components
+        <Link className="link link-hover hidden sm:inline" href="/blog">
+          Blog
+        </Link>
+        <Link className="link link-hover" href="/features">
+          Features
         </Link>
       </div>
       <Hamburger />

@@ -1,5 +1,6 @@
 import { Logo } from "@/components/logo";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -59,12 +60,12 @@ export function Footer() {
                 LEGAL
               </div>
               <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                <a className="link link-hover" href="/tos">
-                  Terms of services
-                </a>
-                <a className="link link-hover" href="/privacy-policy">
-                  Privacy policy
-                </a>
+                <Link className="link link-hover" href="/tos">
+                  Terms of Service
+                </Link>
+                <Link className="link link-hover" href="/privacy-policy">
+                  Privacy Policy
+                </Link>
               </div>
             </div>
             <div className="lg:w-1/3 md:w-1/2 w-full px-4">

@@ -1,7 +1,11 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      Content Goes here
+    <main className="min-h-screen">
+      <section>
+        <div className="container mx-auto px-4">
+          Content Goes here
+        </div>
+      </section>
     </main>
   );
 }
