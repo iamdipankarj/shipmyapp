@@ -1,27 +1,22 @@
+import Link from "next/link";
+import { Logo } from "@/components/logo";
+
 export function Header() {
   return (
-    <header>
-      <div className="navbar bg-base-100">
-        <div className="flex-1">
-          <a href="/" className="btn btn-ghost font-bold text-xl">Shipmyapp</a>
-        </div>
-        <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
-            <li><a>Link</a></li>
-            <li>
-              <details>
-                <summary>
-                  Parent
-                </summary>
-                <ul className="p-2 bg-base-100 rounded-t-none">
-                  <li><a>Link 1</a></li>
-                  <li><a>Link 2</a></li>
-                </ul>
-              </details>
-            </li>
-          </ul>
-        </div>
+    <header className="max-w-7xl mx-auto px-8 py-5 flex items-center">
+      <Logo />
+      <div className="w-full flex items-center pl-12 md:pl-24 gap-4 md:gap-12">
+        <Link className="link link-hover" href="#pricing">
+          Pricing
+        </Link>
+        <Link className="link link-hover hidden sm:inline" href="#demo">
+          Demo
+        </Link>
+        <Link className="link link-hover" href="#components">
+          See Components
+        </Link>
       </div>
+      <button className="btn btn-success">Get ShipMyApp</button>
     </header>
   )
 }

@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Toaster } from 'sonner';
 import { getMetaData, getStructuredData } from "@/lib/seo";
+import { Footer } from "@/components/footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning data-theme="signal">
+    <html lang="en" suppressHydrationWarning data-theme="halloween">
       <head>
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#41c289" />
         <script
@@ -36,6 +37,7 @@ export default function RootLayout({
           position="top-center"
           richColors
         />
+        <Footer />
       </body>
     </html>
   );
