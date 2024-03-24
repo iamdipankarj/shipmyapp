@@ -4,16 +4,16 @@ to: src/components/<%= name %>.tsx
 import React from 'react'
 import { cn } from "@/lib/utils"
 
-interface <%= h.inflection.capitalize(name) %>Props extends React.HTMLAttributes<HTMLDivElement> {
+interface <%= h.humanize(name) %>Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
-export function <%= h.inflection.capitalize(name) %>({
+export function <%= h.humanize(name) %>({
   className,
   ...props
-}: <%= h.inflection.capitalize(name) %>Props) {
+}: <%= h.humanize(name) %>Props) {
   return (
     <div className={cn("block", className)} {...props}>
-      Hello <%= name %>
+      Hello <%= h.humanize(name) %>
     </div>
   )
 }
