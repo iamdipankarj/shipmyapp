@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Hamburger } from "@/components/hamburger";
+import { UserNav } from "@/components/user-nav";
 
 export function Header() {
   return (
@@ -21,10 +22,10 @@ export function Header() {
         </Link>
       </div>
       <div className="flex gap-2">
-        <button className="btn btn-success text-white">Login</button>
+        <Link href="/login" className="btn btn-success text-white">Login</Link>
+        <UserNav />
         <Hamburger />
       </div>
-      {/* <button className="btn btn-success">Get ShipMyApp</button> */}
     </header>
   )
 }
