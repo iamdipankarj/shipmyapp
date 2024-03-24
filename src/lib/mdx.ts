@@ -39,3 +39,31 @@ export const getAllPosts = async () => {
 
   return posts;
 }
+
+export const getAllPostsByCategory = async (category: string) => {
+  const files = fs.readdirSync(rootDirectory);
+  let posts: any[] = []
+
+  for (const file of files) {
+    const { meta } = await getPostBySlug(file);
+    if ((meta as any).categories.includes(category)) {
+      posts.push(meta);
+    }
+  }
+
+  return posts;
+}
+
+export const getAllPostsByAuthor = async (author: string) => {
+  const files = fs.readdirSync(rootDirectory);
+  let posts: any[] = []
+
+  for (const file of files) {
+    const { meta } = await getPostBySlug(file);
+    if ((meta as any).author.toLowerCase().replaceAll(" ", "-") === author) {
+      posts.push(meta);
+    }
+  }
+
+  return posts;
+}

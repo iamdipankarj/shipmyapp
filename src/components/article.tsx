@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react'
 import Image from "next/image";
 import Link from "next/link";
-import dayjs from 'dayjs'
 import { cn } from "@/lib/utils"
 import { Category } from '@/components/category';
 
@@ -86,7 +85,7 @@ export function Article({
         </Link>
         <span className="text-xs text-gray-300">•</span>
         <time className="truncate text-sm" dateTime={publishedAt}>
-          {dayjs(publishedAt).format('MMMM D, YYYY')}
+          {publishedAt}
         </time>
       </div>
     </article>  
