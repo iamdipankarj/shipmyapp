@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Category } from "@/components/category";
 import { getPostBySlug } from "@/lib/mdx";
+import React from "react";
+import { ReadingProgress } from "@/components/reading-progress";
 
 const getPageContent = async (slug: string) => {
   const { meta, content } = await getPostBySlug(slug);
@@ -19,6 +21,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
   return (
     <main className="min-h-screen">
+      <ReadingProgress />
       <div className="container px-8 mx-auto xl:px-5 max-w-screen-lg">
         <div className="mx-auto max-w-screen-md ">
           <div className="flex justify-center">
