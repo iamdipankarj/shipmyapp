@@ -11,7 +11,7 @@ export function Pricing2({
 }: PricingProps) {
   return (
     <section className={cn("bg-base-200 overflow-hidden", className)} {...props}>
-      <div className="py-24 px-8 max-w-5xl mx-auto">
+      <div className="py-20 px-8 max-w-5xl mx-auto">
         <div className="relative flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
           <PricingColumnWinter
             heading="Starter"

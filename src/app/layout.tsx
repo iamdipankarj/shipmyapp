@@ -3,9 +3,9 @@ import { Gabarito as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
-import { Toaster } from 'sonner';
 import { getMetaData, getStructuredData } from "@/lib/seo";
 import { Footer } from "@/components/footer";
+import { Toaster } from 'react-hot-toast';
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -35,7 +35,6 @@ export default function RootLayout({
         <Toaster
           toastOptions={{ className: 'font-sans !text-sm' }}
           position="top-center"
-          richColors
         />
         <Footer />
       </body>

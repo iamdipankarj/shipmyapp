@@ -9,6 +9,7 @@ interface PricingColumnMinimalProps extends React.HTMLAttributes<HTMLDivElement>
   heading: ReactNode | null
   strikedPrice?: ReactNode | null
   price: ReactNode | null
+  frequency: "monthly" | "yearly"
 }
 
 export function PricingColumnMinimal({
@@ -18,6 +19,7 @@ export function PricingColumnMinimal({
   heading,
   price,
   featured,
+  frequency,
   ...props
 }: PricingColumnMinimalProps) {
   return (
@@ -29,10 +31,10 @@ export function PricingColumnMinimal({
       <div className="my-4 mb-6 flex flex-col flex-1">
         <div>
           <span className='font-bold text-neutral text-4xl'>{price}</span>
-          <span className='font-semibold text-base-300 text-3xl'>/mo</span>
+          <span className='font-semibold text-base-300 text-3xl'>{frequency === "monthly" ? "/mo" : "/year"}</span>
         </div>
         {strikedPrice ? (
-          <div className='line-through text-[#E22F38] text-sm font-bold mt-2'>{strikedPrice}/mo</div>
+          <div className='line-through text-[#E22F38] text-sm font-bold mt-2'>{strikedPrice}{frequency === "monthly" ? "/mo" : "/year"}</div>
         ) : null}
         <ul className="space-y-2.5 leading-relaxed text-base flex-1 mt-5 text-left">
           {lineItems.map((item, index) => (
