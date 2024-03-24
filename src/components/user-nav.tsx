@@ -38,7 +38,7 @@ export function UserNav() {
                 </div>
               </div>
             )}
-            <span>Options</span>
+            <span>{session.user?.name || "Anonymous"}</span>
             <ChevronDownIcon className={cn("w-5 h-5 transition-transform", {
               'transform rotate-180': open
             })} />

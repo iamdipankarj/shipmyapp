@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer";
 import { Toaster } from 'react-hot-toast';
 import { getServerSession } from "next-auth";
 import SessionProvider from "@/components/session-provider.tsx";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -21,7 +22,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
 
   return (
     <SessionProvider session={session}>
@@ -37,10 +38,10 @@ export default async function RootLayout({
         <body className={cn("min-h-screen font-sans antialiased", fontSans.variable)}>
           <Header />
           {children}
-          {/* <Toaster
+          <Toaster
             toastOptions={{ className: 'font-sans !text-sm' }}
             position="top-center"
-          /> */}
+          />
           <Footer />
         </body>
       </html>
