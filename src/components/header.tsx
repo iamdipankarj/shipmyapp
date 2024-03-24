@@ -20,7 +20,10 @@ export function Header() {
           Features
         </Link>
       </div>
-      <Hamburger />
+      <div className="flex gap-2">
+        <button className="btn btn-success text-white">Login</button>
+        <Hamburger />
+      </div>
       {/* <button className="btn btn-success">Get ShipMyApp</button> */}
     </header>
   )
