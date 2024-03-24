@@ -1,5 +1,4 @@
-import { Pricing } from "@/components/pricing";
-import { PricingColumnClassic } from "@/components/pricing-column-classic";
+import { Pricing } from "@/components/pricing1";
 
 export default function Home() {
   return (
