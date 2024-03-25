@@ -13,6 +13,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const [email, setEmail] = useState<string>("")
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [googleLoading, setGoogleLoading] = useState<boolean>(false)
+  const [githubLoading, setGithubLoading] = useState<boolean>(false)
   const callbackUrl = searchParams.get('callbackUrl') || '/'
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,12 +26,21 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     signIn('email', { email, callbackUrl })
   }
 
-  const onSubmit = (event: React.SyntheticEvent) => {
+  const onGoogleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault()
     setGoogleLoading(true)
     signIn('google', { callbackUrl })
     setTimeout(() => {
       setGoogleLoading(false)
+    }, 3000)
+  }
+
+  const onGithubSubmit = (event: React.SyntheticEvent) => {
+    event.preventDefault()
+    setGithubLoading(true)
+    signIn('github', { callbackUrl })
+    setTimeout(() => {
+      setGithubLoading(false)
     }, 3000)
   }
 
@@ -68,13 +78,21 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <button className="btn btn-outline" type="button" disabled={googleLoading} onClick={onSubmit}>
+      <button className="btn btn-outline" type="button" disabled={googleLoading} onClick={onGoogleSubmit}>
         {googleLoading ? (
           <Icons.spinner className="h-4 w-4 animate-spin" />
         ) : (
           <Icons.google className="h-4 w-4" />
         )}{" "}
         Google
+      </button>
+      <button className="btn btn-outline" type="button" disabled={githubLoading} onClick={onGithubSubmit}>
+        {githubLoading ? (
+          <Icons.spinner className="h-4 w-4 animate-spin" />
+        ) : (
+          <Icons.gitHub className="h-4 w-4" />
+        )}{" "}
+        Github
       </button>
     </div>
   )
