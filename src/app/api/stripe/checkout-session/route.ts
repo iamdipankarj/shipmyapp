@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
         quantity: 1,
       },
     ],
-    success_url: `${process.env.HOST_NAME}/checkout/failure?session_id={CHECKOUT_SESSION_ID}`,
+    success_url: `${process.env.HOST_NAME}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${process.env.HOST_NAME}/checkout/failure?session_id={CHECKOUT_SESSION_ID}`,
     subscription_data: {
       metadata: {

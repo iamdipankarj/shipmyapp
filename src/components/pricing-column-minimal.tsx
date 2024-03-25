@@ -46,7 +46,7 @@ export function PricingColumnMinimal({
           ))}
         </ul>
       </div>
-      <CheckoutButtonMinimal priceId="price_1OyFWZSDcM5frhqBOQ71f6lQ" featured={featured}>
+      <CheckoutButtonMinimal mode="subscription" priceId="price_1OyFWZSDcM5frhqBOQ71f6lQ" featured={featured}>
         Get Started
       </CheckoutButtonMinimal>
     </div>

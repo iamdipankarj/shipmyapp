@@ -2,9 +2,10 @@ import { redirect } from "next/navigation"
 import { getServerSession } from "next-auth";
 import { UserAuthForm } from "@/components/user-auth-form";
 import Link from "next/link";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export default async function Login() {
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
   const userEmail = session?.user?.email || null;
 
   if (userEmail) {

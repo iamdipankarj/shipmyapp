@@ -64,15 +64,8 @@ export const authOptions: NextAuthOptions = {
        */
       return true;
     },
-    async jwt({ token, account }) {
-      if (account) {
-        token.accessToken = account.access_token
-      }
-      return token
-    },
     async session({ session, user }) {
       if (user) {
-        console.log("here")
         session!.user!.id = user.id;
         session!.user!.stripeCustomerId = user.stripeCustomerId;
         session!.user!.isSubscribed = user.isSubscribed;

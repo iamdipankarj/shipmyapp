@@ -51,6 +51,21 @@ const webhookHandler = async (req: NextRequest) => {
             isSubscribed: true
           },
         });
+
+        // await prisma.subscription.create({
+        //   data: {
+        //     userId: subscription.customer as string,
+        //     stripeSubscriptionId: subscription.id,
+        //     status: subscription.status,
+        //     planId: "",
+        //     amount: subscription.items.data[0].price.unit_amount!,
+        //     currency: subscription.items.data[0].price.currency,
+        //     interval: subscription.items.data[0].price.recurring?.interval!,
+        //     startDate: new Date(subscription.current_period_start * 1000),
+        //     endDate: new Date(subscription.current_period_end * 1000),
+        //     // priceId: subscription.items.data[0].price.id,
+        //   },
+        // });
         break;
       case "customer.subscription.deleted":
         await prisma.user.update({
@@ -79,7 +94,7 @@ const webhookHandler = async (req: NextRequest) => {
         },
       },
       { status: 405 }
-    ).headers.set("Allow", "POST");
+    );
   }
 };
 

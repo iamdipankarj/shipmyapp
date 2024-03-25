@@ -5,16 +5,19 @@ import { cn } from "@/lib/utils"
 import { useRouter } from 'next/navigation';
 import { Icons } from '@/components/icons';
 import { useSession } from 'next-auth/react';
+import toast from 'react-hot-toast';
 
 interface CheckoutButtonMinimalProps extends React.HTMLAttributes<HTMLButtonElement> {
   featured?: boolean
   priceId: string
+  mode: "subscription" | "payment"
 }
 
 export function CheckoutButtonMinimal({
   className,
   featured = false,
   priceId,
+  mode,
   children,
   ...props
 }: CheckoutButtonMinimalProps) {
@@ -34,14 +37,18 @@ export function CheckoutButtonMinimal({
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        mode: "subscription",
+        mode,
         priceId
       })
     }).then(res => res.json()).then(data => {
-      // window.location.href = data.url
-      console.log(data)
+      if (data.session?.url) {
+        window.location.href = data.session.url
+      } else {
+        toast.error("An error occurred. Please try again.")
+        setLoading(false)
+      }
     }).catch(err => {
-      console.error(err)
+      toast.error("An error occurred. Please try again.")
       setLoading(false)
     })
   }
