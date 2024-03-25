@@ -20,6 +20,7 @@ const config: Config = {
       },
       colors: {
         "pink-light": "#FF649C",
+        "red-primary": "#E22F38"
       }
     },
   },

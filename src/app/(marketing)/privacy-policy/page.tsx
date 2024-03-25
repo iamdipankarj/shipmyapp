@@ -1,4 +1,4 @@
-export default function TOS() {
+export default function PrivacyPolicy() {
   return (
     <main className="flex min-h-screen flex-col items-center py-16">
       <div className="container mx-auto px-4 py-6 prose">

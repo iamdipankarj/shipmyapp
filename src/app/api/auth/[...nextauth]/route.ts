@@ -7,6 +7,8 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/login",
+    error: "/auth/error",
+    signOut: "/"
   },
   session: { 
     strategy: "jwt", // Use JSON Web Tokens (JWT) for session management
