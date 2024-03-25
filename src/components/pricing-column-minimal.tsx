@@ -31,7 +31,7 @@ export function PricingColumnMinimal({
       <div className="my-4 mb-6 flex flex-col flex-1">
         <div>
           <span className='font-bold text-neutral text-4xl'>{price}</span>
-          <span className='font-semibold text-base-300 text-3xl'>{frequency === "monthly" ? "/mo" : "/year"}</span>
+          <span className='font-semibold text-base-content/30 text-3xl'>{frequency === "monthly" ? "/mo" : "/year"}</span>
         </div>
         {strikedPrice ? (
           <div className='line-through text-[#E22F38] text-sm font-bold mt-2'>{strikedPrice}{frequency === "monthly" ? "/mo" : "/year"}</div>

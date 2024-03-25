@@ -8,14 +8,16 @@ import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import { getFormattedError } from "@/lib/errorHandler";
 import { Icons } from "@/components/icons";
+import { useProfile } from "@/hooks/use-profile";
 
 export default function ProfilePage() {
   const [name, setName] = useState<string>("")
   const [avatar, setAvatar] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
   const { push, back } = useRouter()
-
   const { data: session } = useSession();
+
+  const { data } = useProfile();
 
   if (!session) {
     push('/login')
@@ -26,17 +28,11 @@ export default function ProfilePage() {
   }
 
   useEffect(() => {
-    if (session?.user?.email) {
-      fetch(`/api/user/${session.user.email}`).then((response) => response.json()).then((data) => {
-        if (data?.data?.name) {
-          setName(data.data.name)
-          setAvatar(data.data.image)
-        }
-      }).catch((e) => {
-        toast.error(getFormattedError(e) || "Unable to fetch user.")
-      })
+    if (data) {
+      setName(data.name)
+      setAvatar(data.avatar)
     }
-  }, [session])
+  }, [data])
 
   async function handleSubmit(event: any) {
     event.preventDefault();
@@ -77,6 +73,7 @@ export default function ProfilePage() {
             width={100}
             height={100}
             className="rounded-full"
+            priority
           />
         </div>
         <label className="input input-bordered flex items-center gap-2 bg-base-200 w-full">
