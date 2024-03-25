@@ -1,44 +1,51 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import { cn } from "@/lib/utils"
 import { signIn } from "next-auth/react"
-import { Loader2, User } from "lucide-react"
 import { Icons } from "@/components/icons"
+import { useSearchParams } from "next/navigation"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
+  const searchParams = useSearchParams()
+  const [email, setEmail] = useState<string>("")
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [googleLoading, setGoogleLoading] = useState<boolean>(false)
+  const callbackUrl = searchParams.get('callbackUrl') || '/'
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value)
+  }
+
+  function handleSubmit(event: any) {
+    event.preventDefault()
+    setIsLoading(true)
+    signIn('email', { email, callbackUrl })
+  }
 
   const onSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault()
     setGoogleLoading(true)
-
-    signIn('google', { callbackUrl: '/features' })
-
+    signIn('google', { callbackUrl })
     setTimeout(() => {
       setGoogleLoading(false)
     }, 3000)
   }
 
-  const onEmailSubmit = (event: React.SyntheticEvent) => {
-    event.preventDefault()
-    setIsLoading(true)
-  }
-
   return (
     <div className={cn("flex flex-col gap-6 md:min-w-72", className)} {...props}>
-      <form onSubmit={onEmailSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-2">
           <input
             type="text"
             className="input input-bordered w-full max-w-xs"
-            id="email"
+            onChange={handleEmailChange}
+            value={email}
             placeholder="name@example.com"
             autoCapitalize="none"
-            autoComplete="off"
+            autoComplete="email"
             autoCorrect="off"
             disabled={isLoading || googleLoading}
             required

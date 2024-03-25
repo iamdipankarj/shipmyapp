@@ -1,13 +1,15 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import prisma from "@/lib/db";
 import EmailProvider from "next-auth/providers/email";
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { sendMagicLink } from "@/emails/send-magic-link";
+import prisma from "@/lib/db";
 
 export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/login",
     error: "/auth/error",
+    verifyRequest: "/auth/verify-request",
     signOut: "/"
   },
   session: { 
@@ -20,6 +22,16 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID! ?? "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET! ?? ""
     }),
+    EmailProvider({
+      type: "email",
+      server: null,
+      async sendVerificationRequest({identifier: email, url}) {
+        sendMagicLink({
+          identifier: email,
+          url
+        })
+      }
+    })
   ],
   adapter: PrismaAdapter(prisma),
   callbacks: {

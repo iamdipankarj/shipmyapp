@@ -6,6 +6,7 @@ import { signOut, useSession } from 'next-auth/react';
 import { Fragment } from 'react'
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function UserNav() {
   const { data: session } = useSession();
@@ -79,4 +80,8 @@ export function UserNav() {
       </Menu>
     )
   }
+
+  return (
+    <Link href="/login" className="btn btn-success text-white">Login</Link>
+  )
 }

@@ -5,13 +5,11 @@ function text({ url, host }: { url: string; host: string }) {
   return `Sign in to ${host}\n${url}\n\n`
 }
 
-export async function sendVerificationRequest(params: {
+export async function sendMagicLink(params: {
   identifier: string
   url: string
-  provider: string
-  theme: string
 }) {
-  const { identifier, url, provider, theme } = params
+  const { identifier, url } = params
   const { host } = new URL(url)
 
   try {

@@ -8,7 +8,7 @@ export default async function Login() {
   const userEmail = session?.user?.email || null;
 
   if (userEmail) {
-    redirect("/features")
+    redirect("/")
   }
 
   return (
