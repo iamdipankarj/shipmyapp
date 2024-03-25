@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import { cn } from "@/lib/utils"
 import { CheckCircle } from 'lucide-react'
+import { CheckoutButtonMinimal } from '@/components/checkout-button-minimal'
 
 interface PricingColumnMinimalProps extends React.HTMLAttributes<HTMLDivElement> {
   featured?: boolean
@@ -45,10 +46,9 @@ export function PricingColumnMinimal({
           ))}
         </ul>
       </div>
-      <button className={cn("btn btn-success hover:!text-white", {
-        "text-white": featured,
-        "btn-outline": !featured
-      })}>Get Started</button>
+      <CheckoutButtonMinimal priceId="price_1OyFWZSDcM5frhqBOQ71f6lQ" featured={featured}>
+        Get Started
+      </CheckoutButtonMinimal>
     </div>
   )
 }

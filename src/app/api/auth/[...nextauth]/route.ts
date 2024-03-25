@@ -5,6 +5,7 @@ import EmailProvider from "next-auth/providers/email";
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { sendMagicLink } from "@/emails/send-magic-link";
 import prisma from "@/lib/db";
+import StripeHelper from "@/lib/stripe";
 
 export const authOptions: NextAuthOptions = {
   pages: {
@@ -13,8 +14,8 @@ export const authOptions: NextAuthOptions = {
     verifyRequest: "/auth/verify-request",
     signOut: "/"
   },
-  session: { 
-    strategy: "jwt", // Use JSON Web Tokens (JWT) for session management
+  session: {
+    strategy: "database", // Use JSON Web Tokens (JWT) for session management
   },
   // added secret key
   secret: process.env.NEXTAUTH_SECRET,
@@ -39,6 +40,19 @@ export const authOptions: NextAuthOptions = {
     })
   ],
   adapter: PrismaAdapter(prisma),
+  events: {
+		createUser: async ({ user }) => {
+			const stripe = new StripeHelper();
+      stripe.createCustomer(user.email!, user.name!).then(async (customer) => {
+        return prisma.user.update({
+          where: { id: user.id },
+          data: {
+            stripeCustomerId: customer.id,
+          },
+        });
+      });
+		},
+	},
   callbacks: {
     async signIn({ user }) {
       /**
@@ -56,10 +70,15 @@ export const authOptions: NextAuthOptions = {
       }
       return token
     },
-    async session({ session, token }) {
-      (session as any).accessToken = token.accessToken
-      return session
-    }
+    async session({ session, user }) {
+      if (user) {
+        console.log("here")
+        session!.user!.id = user.id;
+        session!.user!.stripeCustomerId = user.stripeCustomerId;
+        session!.user!.isSubscribed = user.isSubscribed;
+      }
+			return session;
+		},
   }
 };
 

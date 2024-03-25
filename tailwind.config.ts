@@ -24,6 +24,19 @@ const config: Config = {
       colors: {
         "pink-light": "#FF649C",
         "red-primary": "#E22F38"
+      },
+      keyframes: {
+        progress: {
+          from: {
+            width: '0%'
+          },
+          to: {
+            width: '100%'
+          }
+        },
+      },
+      animation: {
+        progress: "progress 1.5s ease-in-out forwards",
       }
     },
   },
