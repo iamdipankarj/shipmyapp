@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Gabarito as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Header } from "@/components/header";
 import { getMetaData, getStructuredData } from "@/lib/seo";
-import { Footer } from "@/components/footer";
 import { Toaster } from 'react-hot-toast';
 import { getServerSession } from "next-auth";
 import SessionProvider from "@/components/session-provider.tsx";
@@ -36,13 +34,11 @@ export default async function RootLayout({
           />
         </head>
         <body className={cn("min-h-screen font-sans antialiased", fontSans.variable)}>
-          <Header />
           {children}
           <Toaster
             toastOptions={{ className: 'font-sans !text-sm' }}
             position="top-center"
           />
-          <Footer />
         </body>
       </html>
     </SessionProvider>

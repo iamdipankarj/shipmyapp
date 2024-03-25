@@ -11,7 +11,7 @@ export default async function Login() {
   }
 
   return (
-    <main className="flex flex-col h-screen px-6 py-6 flex-1 justify-center items-center">
+    <main className="flex flex-col h-screen p-6 justify-center items-center">
       <UserAuthForm />
     </main>
   );

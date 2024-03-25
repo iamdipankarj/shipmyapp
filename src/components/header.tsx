@@ -22,7 +22,6 @@ export function Header() {
         </Link>
       </div>
       <div className="flex gap-2">
-        <Link href="/login" className="btn btn-success text-white">Login</Link>
         <UserNav />
         <Hamburger />
       </div>

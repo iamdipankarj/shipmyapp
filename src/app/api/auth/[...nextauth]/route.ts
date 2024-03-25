@@ -6,11 +6,11 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 
 export const authOptions: NextAuthOptions = {
   pages: {
-    signIn: "/", // Redirect users to "/login" when signing in
+    signIn: "/login",
   },
-  // session: { 
-  //   strategy: "jwt", // Use JSON Web Tokens (JWT) for session management
-  // },
+  session: { 
+    strategy: "jwt", // Use JSON Web Tokens (JWT) for session management
+  },
   // added secret key
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
@@ -22,8 +22,24 @@ export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   callbacks: {
     async signIn({ user }) {
-      // @TODO Push user to the database
+      /**
+       * This function is called whenever a user logs in.
+       * It should return true if the user is allowed to sign in.
+       * You can have business logic here to indicate if this user is allowed to sign in or not.
+       * By default it returns true
+       * @default return true
+       */
       return true;
+    },
+    async jwt({ token, account }) {
+      if (account) {
+        token.accessToken = account.access_token
+      }
+      return token
+    },
+    async session({ session, token }) {
+      (session as any).accessToken = token.accessToken
+      return session
     }
   }
 };
