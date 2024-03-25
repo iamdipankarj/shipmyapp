@@ -18,6 +18,9 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
+      strokeWidth: {
+        '3': '3px',
+      },
       colors: {
         "pink-light": "#FF649C",
         "red-primary": "#E22F38"
