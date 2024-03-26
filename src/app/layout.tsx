@@ -7,6 +7,8 @@ import { Toaster } from 'react-hot-toast';
 import { getServerSession } from "next-auth";
 import SessionProvider from "@/components/session-provider.tsx";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
+import ProgressProvider from "@/components/progress-provider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -34,11 +36,13 @@ export default async function RootLayout({
           />
         </head>
         <body className={cn("min-h-screen font-sans antialiased", fontSans.variable)}>
-          {children}
-          <Toaster
-            toastOptions={{ className: 'font-sans !text-sm' }}
-            position="top-center"
-          />
+          <ProgressProvider>
+            {children}
+            <Toaster
+              toastOptions={{ className: 'font-sans !text-sm' }}
+              position="top-center"
+            />
+          </ProgressProvider>
         </body>
       </html>
     </SessionProvider>

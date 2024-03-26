@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
     signOut: "/"
   },
   session: {
-    strategy: "database", // Use JSON Web Tokens (JWT) for session management
+    strategy: "database",
   },
   // added secret key
   secret: process.env.NEXTAUTH_SECRET,

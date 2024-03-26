@@ -14,14 +14,10 @@ export default function ProfilePage() {
   const [name, setName] = useState<string>("")
   const [avatar, setAvatar] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
-  const { push, back } = useRouter()
+  const { back } = useRouter()
   const { data: session } = useSession();
 
   const { data } = useProfile();
-
-  if (!session) {
-    push('/login')
-  }
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value)
