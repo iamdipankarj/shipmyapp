@@ -9,7 +9,7 @@ export function Hero({
   ...props
 }: HeroProps) {
   return (
-    <div className={cn("hero min-h-screen", className)} style={{backgroundImage: 'url(/blog/1.jpeg)'}} {...props}>
+    <div className={cn("hero min-h-screen", className)} style={{backgroundImage: 'url(/blog/1.jpg)'}} {...props}>
       <div className="hero-overlay bg-opacity-70"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">

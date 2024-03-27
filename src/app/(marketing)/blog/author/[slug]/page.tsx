@@ -12,7 +12,7 @@ export default async function AuthorPage({ params }: { params: { slug: string } 
       <div className="flex flex-col items-center justify-center">
         <div className="relative h-20 w-20 overflow-hidden rounded-full">
           <Image
-            src="/blog/avatar1.jpeg"
+            src="/blog/avatar1.jpg"
             alt="Thumbnail"
             sizes="(max-width: 768px) 30vw, 33vw"
             width={200}

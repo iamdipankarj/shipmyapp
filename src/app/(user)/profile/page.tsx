@@ -64,7 +64,7 @@ export default function ProfilePage() {
       <form onSubmit={handleSubmit} className="flex flex-col p-6 items-center rounded-2xl bg-base-100 w-full md:w-1/3 mx-auto space-y-4">
         <div className="bg-neutral text-neutral-content rounded-full">
           <Image
-            src={avatar || "/blog/avatar1.jpeg"}
+            src={avatar || "/blog/avatar1.jpg"}
             alt={name || "Anonymous User"}
             width={100}
             height={100}
