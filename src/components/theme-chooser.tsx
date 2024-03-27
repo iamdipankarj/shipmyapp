@@ -63,7 +63,7 @@ export function ThemeChooser({
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none overflow-hidden">
+            <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none overflow-hidden z-50">
               <div className="dropdown-content text-base-content h-[28.6rem] max-h-[calc(100vh-10rem)] w-56 overflow-y-auto shadow-2xl">
                 <div className="grid grid-cols-1 gap-3 p-3">
                   {themes.map((theme) => (
