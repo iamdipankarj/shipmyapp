@@ -19,6 +19,7 @@ export function PricingColumnWinter({
   price,
   currency = "USD",
   featured = false,
+  children,
   ...props
 }: PricingColumnWinterProps) {
   return (
@@ -49,7 +50,7 @@ export function PricingColumnWinter({
         <div className="border border-dashed my-6"></div>
         <div><span className="font-bold text-2xl">{price}</span><span className="text-neutral/50">/Day</span></div>
       </div>
-      <button className="shrink-0 mt-8 btn w-full bg-[#2E6434] hover:bg-[#2E6434]/90 border-none text-white">Choose</button>
+      {children}
     </div>
   )
 }

@@ -20,7 +20,7 @@ export function FAQ({
           You can generate designs by providing a few parameters.
         </Accordion>
         <Accordion heading="How much does it cost?">
-          The basic plan comes with 5 complimentary credits. You can also purchase credits to generate more designs. View our <Link href="/pricing" className="link link-success font-semibold">pricing</Link> page for more details.
+          The basic plan comes with 5 complimentary credits. You can also purchase credits to generate more designs. View our <Link href="/pricing" className="link link-primary font-semibold">pricing</Link> page for more details.
         </Accordion>
       </div>
     </section>

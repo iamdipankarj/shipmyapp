@@ -38,7 +38,7 @@ export default function CheckoutSuccess() {
               </p>
             </div>
             <div className="flex mt-4 flex-col md:flex-row gap-4">
-              <button onClick={() => push("/")} className="flex-1 btn btn-error text-white">Try Again</button>
+              <button onClick={() => push("/")} className="flex-1 btn btn-error">Try Again</button>
               <button className="flex-1 btn">Go to Home</button>
             </div>
           </div>

@@ -30,8 +30,8 @@ export default function CheckoutSuccess() {
         >
           <div className="flex flex-col p-6 rounded-xl bg-base-100 relative overflow-hidden">
             <div className="flex flex-col items-center text-center gap-2">
-              <div className="inline-block p-4 bg-success/20 rounded-full mb-1">
-                <Check className="w-8 h-8 text-success" />
+              <div className="inline-block p-4 bg-primary/20 rounded-full mb-1">
+                <Check className="w-8 h-8 text-primary" />
               </div>
               <h2 className="font-semibold text-2xl text-gray-800">
                 Payment Successful
@@ -41,7 +41,7 @@ export default function CheckoutSuccess() {
               </p>
             </div>
             <div className="w-full bg-base-200-full h-2 absolute left-0 bottom-0 right-0">
-              <div className="bg-success h-full rounded-md w-0 animate-progress"></div>
+              <div className="bg-primary h-full rounded-md w-0 animate-progress"></div>
             </div>
           </div>
         </Transition>

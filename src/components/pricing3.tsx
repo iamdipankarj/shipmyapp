@@ -6,6 +6,7 @@ import { PricingColumnMinimal } from '@/components/pricing-column-minimal'
 import { PricingHeader } from '@/components/pricing-header'
 import { TabContainer } from '@/components/tab-container'
 import { Tab } from '@/components/tab'
+import { CheckoutButton } from '@/components/checkout-button';
 
 interface PricingProps extends React.HTMLAttributes<HTMLDivElement> {
 }
@@ -35,7 +36,11 @@ export function Pricing3({
               '8 hours usage of our coworking space',
               'Access to all events'
             ]}
-          />
+          >
+            <CheckoutButton mode="subscription" priceId="price_1OyFWZSDcM5frhqBOQ71f6lQ">
+              Get Started
+            </CheckoutButton>
+          </PricingColumnMinimal>
           <PricingColumnMinimal
             heading="Plus"
             price={selectedTab == 0 ? "$10" : "$100"}
@@ -49,7 +54,11 @@ export function Pricing3({
               'Free Lunch 1x a day'
             ]}
             featured
-          />
+          >
+            <CheckoutButton mode="subscription" priceId="price_1OyFWZSDcM5frhqBOQ71f6lQ" featured>
+              Get Started
+            </CheckoutButton>
+          </PricingColumnMinimal>
           <PricingColumnMinimal
             heading="Pro"
             price={selectedTab == 0 ? "$20" : "$200"}
@@ -59,7 +68,11 @@ export function Pricing3({
               '8 hours usage of our coworking space',
               'Access to all events'
             ]}
-          />
+          >
+            <CheckoutButton mode="subscription" priceId="price_1OyFWZSDcM5frhqBOQ71f6lQ">
+              Get Started
+            </CheckoutButton>
+          </PricingColumnMinimal>
           <PricingColumnMinimal
             heading="Enterprise"
             price={selectedTab == 0 ? "$30" : "$300"}
@@ -72,7 +85,11 @@ export function Pricing3({
               'Free Business Address',
               'Free Lunch 1x a day'
             ]}
-          />
+          >
+            <CheckoutButton mode="subscription" priceId="price_1OyFWZSDcM5frhqBOQ71f6lQ">
+              Get Started
+            </CheckoutButton>
+          </PricingColumnMinimal>
         </div>
       </div>
     </section>

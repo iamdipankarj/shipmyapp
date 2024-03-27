@@ -13,6 +13,6 @@ export function Category({
   ...props
 }: CategoryProps) {
   return (
-    <Link href={`/blog/category/${slug}`} className={cn("badge [&:not(:hover)]:badge-outline badge-success hover:text-white text-xs font-medium tracking-wider uppercase text-nowrap whitespace-nowrap", className)} {...props}>{children}</Link>
+    <Link href={`/blog/category/${slug}`} className={cn("badge [&:not(:hover)]:badge-outline badge-primary  text-xs font-medium tracking-wider uppercase text-nowrap whitespace-nowrap", className)} {...props}>{children}</Link>
   )
 }

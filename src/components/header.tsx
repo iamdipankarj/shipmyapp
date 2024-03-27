@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Hamburger } from "@/components/hamburger";
 import { UserNav } from "@/components/user-nav";
+import { ThemeChooser } from "@/components/theme-chooser";
 
 export function Header() {
   return (
@@ -22,6 +23,7 @@ export function Header() {
         </Link>
       </div>
       <div className="flex gap-2">
+        <ThemeChooser />
         <UserNav />
         <Hamburger />
       </div>

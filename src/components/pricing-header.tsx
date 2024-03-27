@@ -17,9 +17,9 @@ export function PricingHeader({
         Affordable plans for everyone
       </h2>
       <p className="text-sm md:text-base flex justify-center items-center gap-2 ">
-        <Gift size={24} className="w-5 h-5 fill-success animate-pulse" />
+        <Gift size={24} className="w-5 h-5 fill-primary animate-pulse" />
         <span>
-          <span className="text-success">$100 off</span> for the first 2010 customers
+          <span className="text-primary">$100 off</span> for the first 2010 customers
           (14 left)
         </span>
       </p>

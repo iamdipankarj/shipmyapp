@@ -20,6 +20,7 @@ export function PricingColumnClassic({
   price,
   currency = "USD",
   strikedPrice,
+  children,
   featured = false,
   ...props
 }: PricingColumnClassicProps) {
@@ -28,11 +29,11 @@ export function PricingColumnClassic({
       {featured ? (
         <>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-            <span className="badge text-xs text-white font-semibold border-0 bg-success">
+            <span className="badge text-xs text-white font-semibold border-0 bg-primary">
               POPULAR
             </span>
           </div>
-          <div className="absolute -inset-[2px] rounded-[8px] bg-success z-10" />
+          <div className="absolute -inset-[2px] rounded-[8px] bg-primary z-10" />
         </>
       ) : null}
       <div className="relative flex flex-col gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg h-full">
@@ -59,7 +60,7 @@ export function PricingColumnClassic({
           {lineItems.map((item, index) => (
             <li key={index} className="flex items-center gap-2">
               {index < enabledLength ? (
-                <Check className="w-5 h-5 text-success" />
+                <Check className="w-5 h-5 text-primary" />
               ) : (
                 <X className="w-5 h-5 text-base-content/30" />
               )}
@@ -70,13 +71,7 @@ export function PricingColumnClassic({
           ))}
         </ul>
         <div className="space-y-2">
-          <button
-            className="btn btn-success group btn-block plausible-event-name=Checkout text-white"
-            title="Go to ShipFast Checkout"
-          >
-            <Banknote className="w-5 h-5 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-200 ease-in-out" />
-            Get ShipMyApp
-          </button>
+          {children}
           <p className="flex items-center justify-center gap-2 text-sm text-center text-base-content/80 font-medium relative">
             One-time payment. No subscription.
           </p>

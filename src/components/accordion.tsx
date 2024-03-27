@@ -36,7 +36,7 @@ export function Accordion({
         onClick={handleToggle}
       >
         <span className={cn("flex-1", {
-          "text-success": expanded,
+          "text-primary": expanded,
           "text-base-content": !expanded
         })}>{heading}</span>
         <svg

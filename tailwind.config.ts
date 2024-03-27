@@ -20,6 +20,7 @@ const config: Config = {
       },
       strokeWidth: {
         '3': '3px',
+        '4': '4px',
       },
       colors: {
         "pink-light": "#FF649C",

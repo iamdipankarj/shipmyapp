@@ -1,5 +1,5 @@
-// import { Pricing1 } from "@/components/pricing1";
-// import { Pricing2 } from "@/components/pricing2";
+import { Pricing1 } from "@/components/pricing1";
+import { Pricing2 } from "@/components/pricing2";
 import { FAQ } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { Modal } from "@/components/modal";
@@ -20,6 +20,8 @@ export default function Home() {
           </Modal>
         </div>
       </section>
+      <Pricing1 />
+      <Pricing2 />
       <Pricing3 />
       <FAQ />
       <Hero />

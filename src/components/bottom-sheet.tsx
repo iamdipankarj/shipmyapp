@@ -22,7 +22,7 @@ export function BottomSheet({
     <div className={cn("block", className)} {...props}>
       <Drawer>
         <DrawerTrigger asChild>
-          <button className="btn btn-success text-white">Open Drawer</button>
+          <button className="btn btn-primary">Open Drawer</button>
         </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
@@ -30,9 +30,9 @@ export function BottomSheet({
             <DrawerDescription>This action cannot be undone.</DrawerDescription>
           </DrawerHeader>
           <DrawerFooter>
-            <button className="btn flex-1 btn-success text-white">Submit</button>
+            <button className="btn flex-1 btn-primary">Submit</button>
             <DrawerClose asChild>
-              <button className="btn flex-1 btn-outline btn-success hover:!text-white">Cancel</button>
+              <button className="btn flex-1 btn-outline btn-primary">Cancel</button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>

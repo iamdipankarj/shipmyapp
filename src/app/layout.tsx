@@ -7,7 +7,6 @@ import { Toaster } from 'react-hot-toast';
 import { getServerSession } from "next-auth";
 import SessionProvider from "@/components/session-provider.tsx";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 import ProgressProvider from "@/components/progress-provider";
 
 const fontSans = FontSans({

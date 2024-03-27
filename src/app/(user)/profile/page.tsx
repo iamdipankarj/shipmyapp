@@ -80,7 +80,7 @@ export default function ProfilePage() {
           <User className="w-5 h-5" />
           <input value={name} onChange={handleNameChange} type="text" className="grow" placeholder="John Doe" />
         </label>
-        <button type="submit" className="w-full btn btn-success text-white" disabled={loading}>
+        <button type="submit" className="w-full btn btn-primary" disabled={loading}>
           {loading ? (
             <Icons.spinner className="h-4 w-4 animate-spin" />
           ) : null}

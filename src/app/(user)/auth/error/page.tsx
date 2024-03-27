@@ -32,7 +32,7 @@ export default function AuthError() {
             </p>
           </div>
           <div className="flex mt-4 flex-col md:flex-row gap-4">
-            <button onClick={onTryAgain} className="flex-1 btn text-xl btn-success text-white">Try Again</button>
+            <button onClick={onTryAgain} className="flex-1 btn text-xl btn-primary">Try Again</button>
             <button onClick={onHomeClick} className="flex-1 btn text-xl">Home</button>
           </div>
         </div>

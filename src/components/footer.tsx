@@ -12,7 +12,7 @@ export function Footer() {
             <p className="mt-3 text-sm text-base-content/80 leading-relaxed">
               A No-Nonsense NextJS Boilerplate for Startups.
               <br />
-              Made with ❤️ by <a href="https://twitter.com/iamdipankarj" className="link link-success" target="_blank" rel="nofollow">@iamdipankarj</a>
+              Made with ❤️ by <a href="https://twitter.com/iamdipankarj" className="link link-primary" target="_blank" rel="nofollow">@iamdipankarj</a>
             </p>
             <a
               className="inline-block mt-4 text-sm border border-base-content/20 hover:border-base-content/40 hover:text-base-content/90 hover:bg-base-300 duration-200 cursor-pointer rounded text-base-content/80 px-2 py-1"

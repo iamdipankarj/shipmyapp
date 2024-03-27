@@ -28,7 +28,7 @@ export function Modal({
         <button
           type="button"
           onClick={openModal}
-          className="btn btn-success text-white font-semibold"
+          className="btn btn-primary font-semibold"
         >
           {label}
         </button>
@@ -72,7 +72,7 @@ export function Modal({
                   <div className="mt-4 text-center">
                     <button
                       type="button"
-                      className="btn btn-neutral btn-sm text-white"
+                      className="btn btn-neutral btn-sm"
                       onClick={closeModal}
                     >
                       Got it, thanks!

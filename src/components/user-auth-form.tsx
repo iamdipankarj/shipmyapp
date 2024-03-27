@@ -60,7 +60,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             disabled={isLoading || googleLoading}
             required
           />
-          <button className="btn btn-success text-white" disabled={isLoading}>
+          <button className="btn btn-primary" disabled={isLoading}>
             {isLoading && (
               <Icons.spinner className="h-4 w-4 animate-spin" />
             )}

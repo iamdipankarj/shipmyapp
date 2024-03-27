@@ -7,20 +7,20 @@ import { Icons } from '@/components/icons';
 import { useSession } from 'next-auth/react';
 import toast from 'react-hot-toast';
 
-interface CheckoutButtonMinimalProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface CheckoutButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   featured?: boolean
   priceId: string
   mode: "subscription" | "payment"
 }
 
-export function CheckoutButtonMinimal({
+export function CheckoutButton({
   className,
   featured = false,
   priceId,
   mode,
   children,
   ...props
-}: CheckoutButtonMinimalProps) {
+}: CheckoutButtonProps) {
   const [loading, setLoading] = useState(false)
   const { push } = useRouter()
   const { data: session } = useSession();
@@ -54,8 +54,7 @@ export function CheckoutButtonMinimal({
   }
 
   return (
-    <button onClick={handleSubmit} className={cn("btn btn-success hover:!text-white", {
-      "text-white": featured,
+    <button onClick={handleSubmit} className={cn("btn btn-primary group btn-block", className, {
       "btn-outline": !featured
     })} disabled={loading} {...props}>
       {loading ? (

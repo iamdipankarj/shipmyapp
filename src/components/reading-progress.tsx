@@ -28,6 +28,6 @@ export function ReadingProgress({
   }, []);
 
   return (
-    <div className={cn("fixed h-1 top-0 bg-success z-10", className)} {...props} style={{width: `${width}%` }} />
+    <div className={cn("fixed h-1 top-0 bg-primary z-10", className)} {...props} style={{width: `${width}%` }} />
   )
 }

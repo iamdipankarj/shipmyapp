@@ -82,6 +82,6 @@ export function UserNav() {
   }
 
   return (
-    <Link href="/login" className="btn btn-success text-white">Login</Link>
+    <Link href="/login" className="btn btn-primary">Login</Link>
   )
 }

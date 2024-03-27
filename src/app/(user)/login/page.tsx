@@ -22,14 +22,14 @@ export default async function Login() {
         By clicking continue, you agree to our <br />
         <Link
           href="/tos"
-          className="underline underline-offset-4 hover:text-success"
+          className="underline underline-offset-4 hover:text-primary"
         >
           Terms of Service
         </Link>{" "}
         and{" "}
         <Link
           href="/privacy-policy"
-          className="underline underline-offset-4 hover:text-success"
+          className="underline underline-offset-4 hover:text-primary"
         >
           Privacy Policy
         </Link>
