@@ -31,7 +31,7 @@ export function Hamburger({
   }
 
   return (
-    <button aria-label='Open Menu' className={cn("hamburger-root btn btn-square border-2 border-base-content/20", className)} onClick={handleClick} {...restProps}>
+    <button aria-label='Open Menu' className={cn("hamburger-root btn btn-ghost btn-square border-2 border-base-content/20", className)} onClick={handleClick} {...restProps}>
       <svg className={cn("ham-svg", {
         "ham-active": active
       })} viewBox="0 0 100 100" width={32} height={32}>

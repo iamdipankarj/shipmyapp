@@ -13,7 +13,7 @@ export function Tab({
 }: TabProps) {
   return (
     <button className={cn("w-full rounded-lg px-4 py-2 cursor-pointer duration-100 uppercase tracking-wide flex gap-2 items-center justify-center font-semibold active:scale-95", {
-      "bg-white animate-popup shadow-lg": selected
+      "bg-primary/50 animate-popup": selected
     }, className)} {...props}>
       <span className="whitespace-nowrap">{children}</span>
     </button>

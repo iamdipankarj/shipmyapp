@@ -48,7 +48,7 @@ export function ThemeChooser({
     <Menu as="div" className="relative shrink-0 text-left">
       {({ open }) => (
         <>
-          <Menu.Button className="btn">
+          <Menu.Button className="btn btn-ghost">
             <span>{currentTheme}</span>
             <ChevronDownIcon className={cn("w-5 h-5 transition-transform", {
               'transform rotate-180': open

@@ -25,7 +25,7 @@ export function Pricing3({
           <Tab onClick={() => setSelectedTab(0)} selected={selectedTab == 0}>Monthly</Tab>
           <Tab onClick={() => setSelectedTab(1)} selected={selectedTab == 1}>Yearly</Tab>
         </TabContainer>
-        <div className="text-xs text-center text-neutral/60 mb-8">Pay yearly and save upto 50%</div>
+        <div className="text-xs text-center text-base-content/80 mb-8">Pay yearly and save upto 50%</div>
         <div className="relative flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
           <PricingColumnMinimal
             heading="Starter"

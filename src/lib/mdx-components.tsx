@@ -13,15 +13,6 @@ export function useMDXComponents(): MDXComponents {
     // h1: ({ children }) => <h1 style={{ fontSize: '20px' }}>{children}</h1>,
     img: (props: any) => (
       <ImageComponent {...props} />
-      // <Zoom>
-      //   <Image
-      //     sizes="100vw"
-      //     style={{ width: '100%', height: 'auto' }}
-      //     width={800}
-      //     height={400}
-      //     {...(props as ImageProps)}
-      //   />
-      // </Zoom>
     )
   }
 }

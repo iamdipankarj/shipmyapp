@@ -31,15 +31,15 @@ export function PricingColumnMinimal({
       <h4 className="font-bold">{heading}</h4>
       <div className="my-4 mb-6 flex flex-col flex-1">
         <div>
-          <span className='font-bold text-neutral text-4xl'>{price}</span>
+          <span className='font-bold text-base-content text-4xl'>{price}</span>
           <span className='font-semibold text-base-content/30 text-3xl'>{frequency === "monthly" ? "/mo" : "/year"}</span>
         </div>
         {strikedPrice ? (
-          <div className='line-through text-[#E22F38] text-sm font-bold mt-2'>{strikedPrice}{frequency === "monthly" ? "/mo" : "/year"}</div>
+          <div className='line-through text-error text-sm font-bold mt-2'>{strikedPrice}{frequency === "monthly" ? "/mo" : "/year"}</div>
         ) : null}
         <ul className="space-y-2.5 leading-relaxed text-base flex-1 mt-5 text-left">
           {lineItems.map((item, index) => (
-            <li key={index} className="text-sm text-neutral/50 flex items-start gap-2">
+            <li key={index} className="text-sm text-base-content/60 flex items-start gap-2">
               <CheckCircle className="w-4 h-4 shrink-0 mt-[0.1rem]"/>
               <span className="flex-1">{item}</span>
             </li>

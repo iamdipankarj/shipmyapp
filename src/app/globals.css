@@ -15,6 +15,7 @@
 }
 
 @layer components {
+
   .hamburger-root {
     cursor: pointer;
     user-select: none;

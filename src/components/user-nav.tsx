@@ -16,7 +16,7 @@ export function UserNav() {
       <Menu as="div" className="relative shrink-0 text-left">
         {({ open }) => (
           <>
-            <Menu.Button className="btn">
+            <Menu.Button className="btn btn-ghost">
               {session.user?.image ? (
                 <div className="avatar">
                   <div className="w-8 rounded-full">
@@ -50,7 +50,7 @@ export function UserNav() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+              <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-neutral-content/20 rounded-md bg-base-100 shadow-lg ring-1 ring-black/5 focus:outline-none">
                 <div className="px-1 py-1 ">
                   <Menu.Item>
                     <Link href="/profile" className="btn btn-ghost btn-sm w-full rounded-md text-sm justify-start">

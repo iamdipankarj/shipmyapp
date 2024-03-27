@@ -49,7 +49,7 @@ export function Article({
           <Category key={_} slug={category.toLowerCase().replaceAll(" ", "-")}>{category}</Category>
         )}
         <span className="text-base-content/30 inline-flex text-xs">&mdash;</span>
-        <span className="text-base-content/30 inline-flex text-xs">2 mins read</span>
+        <span className="text-base-content/50 inline-flex text-xs">2 mins read</span>
       </div>
       {heading ? (
         <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2 text-base-content">
@@ -61,13 +61,13 @@ export function Article({
         </h2>
       ) : null}
       <div className="block">
-        <p className="mt-2 line-clamp-3 text-sm text-gray-500">
+        <p className="mt-2 line-clamp-3 text-sm text-base-content/60">
           <Link href={href}>
             {children}
           </Link>
         </p>
       </div>
-      <div className="mt-3 flex items-center space-x-3 text-gray-500">
+      <div className="mt-3 flex items-center space-x-3 text-base-content/60">
         <Link href={`/blog/author/${authorName.toLowerCase().replaceAll(" ", "-")}`}>
           <div className="flex items-center gap-3">
             <div className="relative h-5 w-5 flex-shrink-0">      

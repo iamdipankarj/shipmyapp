@@ -6,7 +6,7 @@ import 'react-medium-image-zoom/dist/styles.css'
 
 export function ImageComponent(props: ImageProps) {
   return (
-    <Zoom wrapElement="span">
+    <Zoom wrapElement="span" classDialog="bg-base-100">
       <Image
         sizes="100vw"
         style={{ width: '100%', height: 'auto' }}

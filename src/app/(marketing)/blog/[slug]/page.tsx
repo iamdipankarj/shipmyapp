@@ -90,7 +90,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             ← View all posts
           </Link>
         </div>
-        <div className="px-8 py-8 mt-10 text-gray-500 rounded-2xl bg-gray-50 ">
+        <div className="px-8 py-8 mt-10 rounded-2xl bg-base-300/50">
           <div className="flex flex-wrap items-start sm:space-x-6 sm:flex-nowrap">
             <div className="relative flex-shrink-0 w-24 h-24 mt-1 ">
               <Link href={getAuthorLink()}>
@@ -107,7 +107,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             </div>
             <div>
               <div className="mb-3">
-                <h3 className="text-lg font-medium text-gray-800">
+                <h3 className="text-lg font-medium text-base-content">
                   About {metaData.author}
                 </h3>
               </div>
@@ -123,7 +123,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
               </div>
               <div className="mt-3">
                 <Link
-                  className="py-2 text-sm text-blue-600 rounded-full bg-brand-secondary/20 "
+                  className="py-2 text-sm text-primary rounded-full"
                   href={getAuthorLink()}
                 >
                   View Profile

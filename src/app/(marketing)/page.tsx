@@ -20,9 +20,9 @@ export default function Home() {
           </Modal>
         </div>
       </section>
-      <Pricing1 />
-      <Pricing2 />
       <Pricing3 />
+      <Pricing2 />
+      <Pricing1 />
       <FAQ />
       <Hero />
     </main>
