@@ -26,7 +26,7 @@ export default function ProfilePage() {
   useEffect(() => {
     if (data) {
       setName(data.name)
-      setAvatar(data.avatar)
+      setAvatar(data.image)
     }
   }, [data])
 

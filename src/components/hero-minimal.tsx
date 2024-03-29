@@ -31,34 +31,20 @@ export function HeroMinimal({
                 Get the best-in-class group mentoring plans and professional
                 benefits for your team
               </p>
-              <div className="flex flex-wrap">
-                <div className="w-full md:w-auto">
-                  <div className="block">
-                    <button
-                      className="btn btn-primary btn-lg w-full md:w-auto"
-                      type="button"
-                    >
-                      Join Free for 30 Days
-                    </button>
-                  </div>
-                </div>
-                <div className="w-full md:w-auto">
-                  <div className="block">
-                    <button
-                      className="btn btn-outline btn-lg w-full md:w-auto"
-                      type="button"
-                    >
-                      <div className="flex flex-wrap justify-center items-center -m-1">
-                        <div className="w-auto p-1">
-                          <Phone className="w-5 h-5" />
-                        </div>
-                        <div className="w-auto p-1">
-                          <span>Book a call</span>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
+              <div className="flex flex-wrap gap-4">
+                <button
+                  className="btn btn-primary btn-lg w-full md:w-auto"
+                  type="button"
+                >
+                  Join Free for 30 Days
+                </button>
+                <button
+                  className="btn btn-outline btn-lg w-full md:w-auto"
+                  type="button"
+                >
+                  <Phone className="w-5 h-5" />
+                  Book a call
+                </button>
               </div>
             </div>
             <div className="w-full md:w-1/2 p-8">
