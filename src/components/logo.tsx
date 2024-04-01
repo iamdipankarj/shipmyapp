@@ -15,6 +15,7 @@ export function Logo({
         alt="ShipMyApp"
         width={1675}
         height={512}
+        className="w-36 h-auto"
         priority
       />
     </Link>

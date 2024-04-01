@@ -16,10 +16,10 @@ export function UserNav() {
       <Menu as="div" className="relative shrink-0 text-left">
         {({ open }) => (
           <>
-            <Menu.Button className="btn btn-ghost">
+            <Menu.Button className="btn btn-ghost btn-sm">
               {session.user?.image ? (
                 <div className="avatar">
-                  <div className="w-8 rounded-full">
+                  <div className="w-5 rounded-full">
                     <Image
                       width={32}
                       height={32}

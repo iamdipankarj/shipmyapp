@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 import { useRouter } from 'next/navigation';
 import { Icons } from '@/components/icons';
 import { useSession } from 'next-auth/react';
-import toast from 'react-hot-toast';
+import { toast } from "sonner";
 
 interface CheckoutButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   featured?: boolean

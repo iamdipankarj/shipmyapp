@@ -2,7 +2,7 @@
 
 import { BottomSheet } from "@/components/bottom-sheet";
 import { Masonry } from "@/components/masonry";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 
 export default function Features() {
   return (

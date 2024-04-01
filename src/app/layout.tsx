@@ -3,7 +3,7 @@ import { Gabarito as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { getMetaData, getStructuredData } from "@/lib/seo";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from 'sonner';
 import { getServerSession } from "next-auth";
 import SessionProvider from "@/components/session-provider.tsx";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
@@ -25,7 +25,7 @@ export default async function RootLayout({
 
   return (
     <SessionProvider session={session}>
-      <html lang="en" suppressHydrationWarning data-theme="light">
+      <html lang="en" suppressHydrationWarning data-theme="signal">
         <head>
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#41c289" />
           <script
@@ -40,6 +40,7 @@ export default async function RootLayout({
             <Toaster
               toastOptions={{ className: 'font-sans !text-sm' }}
               position="top-center"
+              richColors
             />
           </ProgressProvider>
         </body>

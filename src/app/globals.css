@@ -15,6 +15,17 @@
 }
 
 @layer components {
+  .container {
+    @apply mx-auto px-4 md:px-12 max-w-screen-lg;
+  }
+
+  body[data-menu="open"] #navigation {
+    @apply scale-y-100;
+  }
+
+  .mobile-menu {
+    @apply absolute flex-col left-0 right-0 top-16 bg-white gap-2 z-50 duration-300 transition-transform scale-y-0 origin-[top_center];
+  }
 
   .hamburger-root {
     cursor: pointer;

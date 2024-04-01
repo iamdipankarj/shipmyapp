@@ -18,7 +18,7 @@ export function Pricing3({
   const [selectedTab, setSelectedTab] = useState(1)
 
   return (
-    <section className={cn("bg-base-200 overflow-hidden", className)} {...props}>
+    <section id="pricing" className={cn("bg-base-100 overflow-hidden", className)} {...props}>
       <div className="py-20 px-8 max-w-5xl mx-auto">
         <PricingHeader className="mb-12" />
         <TabContainer className="max-w-64 mx-auto mb-4">

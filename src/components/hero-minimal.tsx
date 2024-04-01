@@ -16,7 +16,7 @@ export function HeroMinimal({
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/2">
-              <div className="inline-block mb-6 px-2 py-1 font-semibold bg-info text-base-100 rounded-full">
+              <div className="inline-block mb-6 px-2 py-1 font-semibold bg-secondary text-base-100 rounded-full">
                 <div className="flex flex-wrap items-centerp-1">
                   <Link className="text-sm flex gap-1 items-center" href="#">
                     <span className='flex-1'>👋 We are hiring! View open roles</span>

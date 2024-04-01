@@ -92,7 +92,7 @@ const config: Config = {
       "sunset",
       {
         signal: {
-          "primary": "#2da530",
+          "primary": "#36b37e",
           "primary-content": "#fff",
           "secondary": "#f95c5c",
           "secondary-content": "#fff",

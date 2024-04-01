@@ -5,7 +5,7 @@ import { ArrowLeft, Mail, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 import { getFormattedError } from "@/lib/errorHandler";
 import { Icons } from "@/components/icons";
 import { useProfile } from "@/hooks/use-profile";
