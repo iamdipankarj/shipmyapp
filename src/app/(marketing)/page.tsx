@@ -7,12 +7,14 @@ import { CallToAction } from "@/components/call-to-action";
 import { Newsletter } from "@/components/newsletter";
 // import { HeroMinimal } from "@/components/hero-minimal";
 import { Banner } from "@/components/banner";
+import { FeatureSection } from "@/components/feature-section";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Banner />
-      <Newsletter />
+      <FeatureSection />
+      {/* <Newsletter /> */}
       <CallToAction />
       <Pricing3 />
       <FAQ />

@@ -6,6 +6,15 @@
   :root {
     --color-primary: #E22F38;
   }
+
+  ::selection {
+    color: #fff;
+    background: #36b37e;
+  }
+}
+
+body, html {
+  @apply !scroll-smooth;
 }
 
 @layer utilities {

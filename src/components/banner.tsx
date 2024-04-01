@@ -32,11 +32,11 @@ export function Banner({
               </Link>
               <div className="mt-5">
                 <p className="inline-flex bg-yellow-600/10 text-sm rounded-lg py-2 px-5 gap-1">
-                  Looking for other platforms?{" "}
-                  <a href="#" className="font-semibold">
+                  Have Questions?{" "}
+                  <Link href="#faq" className="font-semibold">
                     {" "}
-                    Click Here
-                  </a>
+                    See FAQ
+                  </Link>
                 </p>
               </div>
             </div>
