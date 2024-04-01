@@ -1,7 +1,7 @@
+import { Activity, Book, LayoutTemplate, PanelsTopLeft } from 'lucide-react'
 import React from 'react'
 import Image from 'next/image'
 import { cn } from "@/lib/utils"
-import { Book } from 'lucide-react'
 
 interface FeatureSectionProps extends React.HTMLAttributes<HTMLDivElement> {
 }
@@ -27,19 +27,19 @@ export function FeatureSection({
             <div className="flex flex-col gap-4 mt-10">
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
-                  <Book className="h-6 w-6 text-primary" />
+                  <LayoutTemplate className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-medium">Multiple Page Templates</h3>
               </div>
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
-                  <Book className="h-6 w-6 text-primary" />
+                  <Activity className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-medium">Waitlist System</h3>
               </div>
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
-                  <Book className="h-6 w-6 text-primary" />
+                  <PanelsTopLeft className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-medium">Unique Header and Footer components</h3>
               </div>
@@ -58,11 +58,5 @@ export function FeatureSection({
         </div>
       </div>
     </section>
-  )
-
-  return (
-    <div className={cn("block", className)} {...props}>
-      Hello FeatureSection
-    </div>
   )
 }
