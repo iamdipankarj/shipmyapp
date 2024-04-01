@@ -2,6 +2,7 @@ import React from 'react'
 import { cn } from "@/lib/utils"
 import Link from 'next/link'
 import { Banknote } from 'lucide-react'
+import Image from 'next/image'
 
 interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
 }
@@ -25,10 +26,10 @@ export function Banner({
               <p className="text-gray-500">
                 The last NextJS boilerplate you&apos;ll ever need.
               </p>
-                <Link href="#pricing" className="mt-14 pe-4 inline-flex items-center btn btn-primary py-2 px-4 border border-primary hover:border-primary hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/50 transition-all duration-500">
-                  <Banknote className="w-5 h-5" />
-                  Get ShipMyApp
-                </Link>
+              <Link href="#pricing" className="mt-14 pe-4 inline-flex items-center btn btn-primary py-2 px-4 border border-primary hover:border-primary hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/50 transition-all duration-500">
+                <Banknote className="w-5 h-5" />
+                Get ShipMyApp
+              </Link>
               <div className="mt-5">
                 <p className="inline-flex bg-yellow-600/10 text-sm rounded-lg py-2 px-5 gap-1">
                   Looking for other platforms?{" "}
@@ -41,12 +42,13 @@ export function Banner({
             </div>
             <div className="order-1 lg:order-2">
               <div className="relative 2xl:w-[128%]">
-                <img
-                  src="/banner.svg"
-                  alt="desktop-img"
+                <Image
+                  src="/banner1.png"
+                  alt="ShipMyApp Banner"
                   className="w-full h-full p-2 rounded-lg"
-                  data-aos="fade-left"
-                  data-aos-duration={600}
+                  width={1080}
+                  height={900}
+                  priority
                 />
               </div>
             </div>
