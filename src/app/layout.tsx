@@ -25,7 +25,7 @@ export default async function RootLayout({
 
   return (
     <SessionProvider session={session}>
-      <html lang="en" suppressHydrationWarning data-theme="signal">
+      <html lang="en" suppressHydrationWarning data-theme="light">
         <head>
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#41c289" />
           <script
