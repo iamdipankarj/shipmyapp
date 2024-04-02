@@ -15,7 +15,7 @@ export default async function Login() {
   return (
     <main className="flex flex-col h-screen p-6 justify-center items-center">
       <h1 className="text-2xl font-semibold tracking-tight mb-5">
-        Create an account
+        Sign In
       </h1>
       <UserAuthForm />
       <p className="px-8 text-center text-sm text-muted-foreground mt-10">

@@ -82,7 +82,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         {googleLoading ? (
           <Icons.spinner className="h-4 w-4 animate-spin" />
         ) : (
-          <Icons.google className="h-4 w-4" />
+          <Icons.googleColored className="h-4 w-4" />
         )}{" "}
         Google
       </button>

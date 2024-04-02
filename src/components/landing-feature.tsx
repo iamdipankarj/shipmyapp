@@ -3,15 +3,15 @@ import React from 'react'
 import Image from 'next/image'
 import { cn } from "@/lib/utils"
 
-interface FeatureSectionProps extends React.HTMLAttributes<HTMLDivElement> {
+interface LandingFeatureProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
-export function FeatureSection({
+export function LandingFeature({
   className,
   ...props
-}: FeatureSectionProps) {
+}: LandingFeatureProps) {
   return (
-    <section className={cn("py-16 md:py-24", className)} {...props}>
+    <section className={cn("py-16 md:py-20", className)} {...props}>
       <div className="container">
         <div className="grid lg:grid-cols-2 grid-cols-1 2xl:gap-24 gap-10 items-center">
           <div className="order-2 lg:order-1">
