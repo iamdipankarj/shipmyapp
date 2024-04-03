@@ -73,3 +73,9 @@ model Subscription {
   updatedAt            DateTime @default(now()) @updatedAt
   user                 User     @relation(fields: [userId], references: [id])
 }
+
+model Waitlist {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
