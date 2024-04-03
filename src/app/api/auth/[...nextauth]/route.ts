@@ -6,6 +6,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { sendMagicLink } from "@/emails/send-magic-link";
 import prisma from "@/lib/db";
 import StripeHelper from "@/lib/stripe";
+import { sendWelcomeEmail } from "@/emails/send-welcome-email";
 
 export const authOptions: NextAuthOptions = {
   pages: {
@@ -43,6 +44,11 @@ export const authOptions: NextAuthOptions = {
   events: {
 		createUser: async ({ user }) => {
 			const stripe = new StripeHelper();
+      sendWelcomeEmail({
+        identifier: user.email!,
+        url: process.env.NEXTAUTH_URL!,
+        userFirstname: user.name!
+      });
       stripe.createCustomer(user.email!, user.name!).then(async (customer) => {
         return prisma.user.update({
           where: { id: user.id },

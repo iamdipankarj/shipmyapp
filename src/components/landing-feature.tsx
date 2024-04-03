@@ -26,19 +26,19 @@ export function LandingFeature({
             </p>
             <div className="flex flex-col gap-4 mt-10">
               <div className="flex items-center gap-4">
-                <div className="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
+                <div className="feature-icon">
                   <LayoutTemplate className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-medium">Multiple Page Templates</h3>
               </div>
               <div className="flex items-center gap-4">
-                <div className="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
+                <div className="feature-icon">
                   <Activity className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-medium">Waitlist System</h3>
               </div>
               <div className="flex items-center gap-4">
-                <div className="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
+                <div className="feature-icon">
                   <PanelsTopLeft className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-medium">Unique Header and Footer components</h3>

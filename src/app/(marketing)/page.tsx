@@ -10,6 +10,10 @@ import { Banner } from "@/components/banner";
 import { LandingFeature } from "@/components/landing-feature";
 import { AuthenticationFeature } from "@/components/authentication-feature";
 import { PaymentFeature } from "@/components/payment-feature";
+import { EmailFeature } from "@/components/email-feature";
+import { AIFeature } from "@/components/ai-feature";
+import { DatabaseFeature } from "@/components/database-feature";
+import { BlogFeature } from "@/components/blog-feature";
 
 export default function Home() {
   return (
@@ -18,6 +22,10 @@ export default function Home() {
       <LandingFeature />
       <AuthenticationFeature />
       <PaymentFeature />
+      <EmailFeature />
+      <AIFeature />
+      <DatabaseFeature />
+      <BlogFeature />
       {/* <Newsletter /> */}
       <CallToAction />
       <Pricing3 />

@@ -19,7 +19,7 @@ export function BannerSimple({
       </div>
       <div className='relative flex-1 flex items-center justify-center'>
         <div className="-mt-20 container mx-auto px-4 flex flex-col gap-4 text-center justify-center items-center">
-          <p className='text-error font-bold text-sm tracking-wide'>India's #1 Snack Company</p>
+          <p className='text-error font-bold text-sm tracking-wide'>India&apos;s #1 Snack Company</p>
           <h1 className="text-4xl md:text-6xl font-bold text-white">Beyond Breakfast</h1>
           <h2 className="text-2xl md:text-5xl font-bold text-white/90">Delivered directly to your floor</h2>
           <p className="text-white/70">Satisfy your food cravings from a carefully crafted menu.</p>

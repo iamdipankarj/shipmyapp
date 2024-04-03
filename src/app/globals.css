@@ -28,6 +28,10 @@ body, html {
     @apply mx-auto px-4 md:px-12 max-w-screen-lg;
   }
 
+  .feature-icon {
+    @apply bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12 shrink-0;
+  }
+
   body[data-menu="open"] #navigation {
     @apply scale-y-100;
   }

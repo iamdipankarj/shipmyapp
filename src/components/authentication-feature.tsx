@@ -27,25 +27,25 @@ export function AuthenticationFeature({
             </p>
             <div className="flex flex-col gap-4 mt-10">
               <div className="flex items-center gap-4">
-                <div className="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
+                <div className="feature-icon">
                   <User className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-medium">User navigation</h3>
               </div>
               <div className="flex items-center gap-4">
-                <div className="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
+                <div className="feature-icon">
                   <Sparkles className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-medium">Magic Link sign up and login</h3>
               </div>
               <div className="flex items-center gap-4">
-                <div className="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
+                <div className="feature-icon">
                   <Icons.googleColored className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-medium">OAuth Login with Google and Github</h3>
               </div>
               <div className="flex items-center gap-4">
-                <div className="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
+                <div className="feature-icon">
                   <DatabaseZap className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-medium">Save user data via Prisma</h3>
