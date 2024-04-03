@@ -59,10 +59,10 @@ export function UserNav() {
                     </Link>
                   </Menu.Item>
                   <Menu.Item>
-                    <button className="btn btn-ghost btn-sm w-full rounded-md text-sm justify-start">
+                    <Link href="/billing" className="btn btn-ghost btn-sm w-full rounded-md text-sm justify-start">
                       <CreditCard className="w-5 h-5" />
                       Billing
-                    </button>
+                    </Link>
                   </Menu.Item>
                 </div>
                 <div className="px-1 py-1">
