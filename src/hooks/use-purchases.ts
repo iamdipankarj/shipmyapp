@@ -5,20 +5,18 @@ import { useSession } from "next-auth/react";
 import { getFormattedError } from "@/lib/errorHandler";
 
 /**
- * Get the current user profile, such as name, image and email
- * @returns Object with data, error and subscribed
+ * Get all the purchases made by the user
+ * @returns Object with data and error
  */
-export function useProfile() {
+export function usePurchases() {
   const { data: session } = useSession();
-  const [data, setData] = useState<any | null>(null)
+  const [data, setData] = useState<any[]>([])
   const [error, setError] = useState<string | null>(null)
-  const [subscribed, setSubscribed] = useState<boolean>(false)
 
   useEffect(() => {
     if (session?.user?.email) {
-      fetch(`/api/user/${session.user.email}`).then((response) => response.json()).then((response) => {
-        setData(response.data)
-        setSubscribed(response.data.subscribed)
+      fetch(`/api/user/purchases/${session.user.email}`).then((response) => response.json()).then((response: any) => {
+        setData(response.data.purchases)
       }).catch((e) => {
         setError(getFormattedError(e) || "Unable to fetch user.")
       })
@@ -26,8 +24,7 @@ export function useProfile() {
   }, [session])
 
   return {
-    subscribed,
-    data,
+    data: data || [],
     error
   }
 }

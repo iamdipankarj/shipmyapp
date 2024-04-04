@@ -49,9 +49,13 @@ const webhookHandler = async (req: NextRequest) => {
           await prisma.purchase.create({
             data: {
               productId,
-              userId,
               currency: completedEvent.currency,
-              price: completedEvent.amount_total
+              price: completedEvent.amount_total,
+              user: {
+                connect: {
+                  id: userId
+                }
+              }
             }
           });
         } catch (error) {

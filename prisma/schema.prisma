@@ -46,7 +46,7 @@ model User {
   updatedAt        DateTime   @default(now()) @updatedAt
   accounts         Account[]
   sessions         Session[]
-  Purchase         Purchase[]
+  purchases        Purchase[]
 }
 
 model VerificationToken {

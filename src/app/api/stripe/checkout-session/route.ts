@@ -10,7 +10,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 export async function POST(req: NextRequest) {
   const payload = await req.json();
   
-  const { mode, priceId } = payload;
+  const { mode, priceId, userId, productId } = payload;
 
   const session = await getServerSession(authOptions);
 
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const checkoutSession = await stripe.checkout.sessions.create({
+  const checkoutBody = {
     mode,
     customer: session.user.stripeCustomerId,
     line_items: [
@@ -35,15 +35,24 @@ export async function POST(req: NextRequest) {
         quantity: 1,
       },
     ],
+    metadata: {
+      userId,
+      productId
+    },
     success_url: `${process.env.HOST_NAME}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${process.env.HOST_NAME}/checkout/failure?session_id={CHECKOUT_SESSION_ID}`,
-    subscription_data: {
+    cancel_url: `${process.env.HOST_NAME}/checkout/failure?session_id={CHECKOUT_SESSION_ID}`
+  } as any
+
+  if (mode === "subscription") {
+    checkoutBody.subscription_data = {
       metadata: {
         payingUserId: session.user.id,
       },
       trial_period_days: 14,
-    },
-  });
+    }
+  }
+
+  const checkoutSession = await stripe.checkout.sessions.create(checkoutBody);
   if (!checkoutSession.url) {
     return NextResponse.json(
       {
