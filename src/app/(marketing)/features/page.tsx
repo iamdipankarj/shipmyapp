@@ -1,5 +1,6 @@
 "use client";
 
+import { ImageCarousel } from "@/components/ImageCarousel";
 import { BottomSheet } from "@/components/bottom-sheet";
 import { ButtonPopover } from "@/components/button-popover";
 import { Masonry } from "@/components/masonry";
@@ -37,6 +38,12 @@ export default function Features() {
           </Modal>
         </div>
       </section> */}
+
+      <section className="max-w-7xl mx-auto px-8">
+        <div className="container py-20 pb-40">
+          <ImageCarousel />
+        </div>
+      </section>
 
       <section>
         <div className="container">

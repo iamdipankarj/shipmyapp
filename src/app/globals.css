@@ -24,6 +24,10 @@ body, html {
 }
 
 @layer components {
+  .carousel-nav {
+    @apply inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 border bg-base-100 hover:bg-primary hover:text-white h-8 w-8 rounded-full;
+  }
+
   .container {
     @apply mx-auto px-4 md:px-12 max-w-screen-lg;
   }

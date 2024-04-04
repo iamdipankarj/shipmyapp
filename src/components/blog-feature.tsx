@@ -47,7 +47,7 @@ export function BlogFeature({
           </div>
           <div className="order-1 lg:order-2">
             <Image
-              src="/database.png"
+              src="/features/database.png"
               alt="ShipMyApp Banner"
               className="w-full h-full p-2 rounded-lg"
               width={1479}

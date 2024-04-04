@@ -37,7 +37,7 @@ export function DatabaseFeature({
               </FeatureListItem>
             </FeatureListContainer>
           </FeatureContent>
-          <FeatureImage imagePath="/database.png" imageHeight={1204} imageWidth={1479} />
+          <FeatureImage imagePath="/features/database.png" imageHeight={1204} imageWidth={1479} />
         </FeatureContainer>
       </div>
     </section>

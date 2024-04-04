@@ -38,7 +38,7 @@ export function PaymentFeature({
               </FeatureListItem>
             </FeatureListContainer>
           </FeatureContent>
-          <FeatureImage order='reverse' imagePath="/signin.png" imageHeight={1080} imageWidth={900} />
+          <FeatureImage order='reverse' imagePath="/features/signin.png" imageHeight={1080} imageWidth={900} />
         </FeatureContainer>
       </div>
     </section>

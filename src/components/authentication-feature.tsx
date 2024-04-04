@@ -42,7 +42,7 @@ export function AuthenticationFeature({
               </FeatureListItem>
             </FeatureListContainer>
           </FeatureContent>
-          <FeatureImage imagePath="/signin.png" imageHeight={1080} imageWidth={900} />
+          <FeatureImage imagePath="/features/signin.png" imageHeight={1080} imageWidth={900} />
         </FeatureContainer>
       </div>
     </section>

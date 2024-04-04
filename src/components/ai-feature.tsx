@@ -34,7 +34,7 @@ export function AIFeature({
               </FeatureListItem>
             </FeatureListContainer>
           </FeatureContent>
-          <FeatureImage order='reverse' imagePath="/llm.gif" imageHeight={1080} imageWidth={900} />
+          <FeatureImage order='reverse' imagePath="/features/llm.gif" imageHeight={1080} imageWidth={900} />
         </FeatureContainer>
       </div>
     </section>

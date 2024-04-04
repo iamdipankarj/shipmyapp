@@ -38,7 +38,7 @@ export function LandingFeature({
               </FeatureListItem>
             </FeatureListContainer>
           </FeatureContent>
-          <FeatureImage imagePath="/banner1.png" imageHeight={1080} imageWidth={900} />
+          <FeatureImage imagePath="/features/banner.png" imageHeight={1080} imageWidth={900} />
         </FeatureContainer>
       </div>
     </section>
