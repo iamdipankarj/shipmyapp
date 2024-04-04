@@ -23,7 +23,7 @@ export function EmailFeature({
     <section className={cn("py-16 md:py-20", className)} {...props}>
       <div className="container">
         <FeatureContainer>
-          <FeatureContent>
+          <FeatureContent order="reverse">
             <FeatureBadge>10 Hours Saved</FeatureBadge>
             <FeatureHeader>Emails</FeatureHeader>
             <FeatureDescription>Easily send emails to your customers with built in templates.</FeatureDescription>
@@ -42,7 +42,7 @@ export function EmailFeature({
               </FeatureListItem>
             </FeatureListContainer>
           </FeatureContent>
-          <FeatureImage imagePath="/features/email.png" imageHeight={1080} imageWidth={900} />
+          <FeatureImage order="reverse" imagePath="/features/email.png" imageHeight={1080} imageWidth={900} />
         </FeatureContainer>
       </div>
     </section>

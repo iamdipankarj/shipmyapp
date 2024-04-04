@@ -1,5 +1,5 @@
-// import { Pricing1 } from "@/components/pricing1";
-// import { Pricing2 } from "@/components/pricing2";
+import { Pricing1 } from "@/components/pricing1";
+import { Pricing2 } from "@/components/pricing2";
 import { FAQ } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { Pricing3 } from "@/components/pricing3";
@@ -14,6 +14,7 @@ import { EmailFeature } from "@/components/email-feature";
 import { AIFeature } from "@/components/ai-feature";
 import { DatabaseFeature } from "@/components/database-feature";
 import { BlogFeature } from "@/components/blog-feature";
+import { Pricing4 } from "@/components/pricing4";
 
 export default function Home() {
   return (
@@ -28,7 +29,10 @@ export default function Home() {
       <BlogFeature />
       {/* <Newsletter /> */}
       <CallToAction />
+      <Pricing1 />
+      <Pricing2 />
       <Pricing3 />
+      <Pricing4 />
       <FAQ />
       <Hero />
     </main>

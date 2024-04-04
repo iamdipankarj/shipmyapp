@@ -21,7 +21,7 @@ export function DatabaseFeature({
     <section className={cn("py-16 md:py-20", className)} {...props}>
       <div className="container">
         <FeatureContainer>
-          <FeatureContent>
+          <FeatureContent order="reverse">
             <FeatureBadge>15 Hours Saved</FeatureBadge>
             <FeatureHeader>Database Integration</FeatureHeader>
             <FeatureDescription>Fully featured database with Prisma ORM, without a blink of SQL.</FeatureDescription>
@@ -37,7 +37,7 @@ export function DatabaseFeature({
               </FeatureListItem>
             </FeatureListContainer>
           </FeatureContent>
-          <FeatureImage imagePath="/features/database.png" imageHeight={1204} imageWidth={1479} />
+          <FeatureImage order="reverse" imagePath="/features/database.png" imageHeight={1204} imageWidth={1479} />
         </FeatureContainer>
       </div>
     </section>

@@ -6,7 +6,8 @@ export default async function Blog() {
 
   return (
     <main className="min-h-screen">
-      <section className="container px-8 mx-auto xl:px-5  max-w-screen-lg py-5 lg:py-8">
+      <section className="container px-8 mx-auto xl:px-5 max-w-screen-lg py-5 lg:py-8">
+        <h1 className="text-2xl text-center md:text-4xl sm:leading-tight max-w-screen-xl mb-16 font-bold">Blog</h1>
         <div className="grid gap-10 md:grid-cols-2 lg:gap-10">
           {posts.map((post) => (
             <Article

@@ -99,7 +99,7 @@ const config: Config = {
           "accent": "#5856d6",
           "neutral": "#27373f",
           "neutral-content": "#fff",
-          "base-100": "#fffcf9",
+          "base-100": "#fff",
           "info": "#ffe200",
           "success": "#19911c",
           "success-content": "#fff",

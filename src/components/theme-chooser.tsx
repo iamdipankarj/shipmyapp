@@ -6,6 +6,7 @@ import { Check, ChevronDownIcon } from 'lucide-react'
 import { Menu, Transition } from '@headlessui/react'
 
 const themes = [
+  "signal",
   "light",
   "dark",
   "cupcake",
@@ -36,12 +37,12 @@ export function ThemeChooser({
   className,
   ...props
 }: ThemeChooserProps) {
-  const [currentTheme, setCurrentTheme] = useState<string>("light")
+  const [currentTheme, setCurrentTheme] = useState<string>("signal")
 
   const handleThemeChange = (event: React.MouseEvent<HTMLButtonElement>) => {
     const newTheme = event.currentTarget.getAttribute("data-set-theme")
-    setCurrentTheme(newTheme || "light")
-    document.documentElement.setAttribute("data-theme", newTheme || "light")
+    setCurrentTheme(newTheme || "signal")
+    document.documentElement.setAttribute("data-theme", newTheme || "signal")
   }
 
   return (

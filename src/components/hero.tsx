@@ -16,7 +16,7 @@ export function Hero({
         <div className="max-w-lg">
           <h2 className="mb-5 text-5xl font-bold">Leave the boring stuff to us</h2>
           <p className="mb-5">
-            We built ShipMyApp to help you focus on building your product. We take care of the boilerplate code so you can keep shipping.
+            I built ShipMyApp to help you focus on building your product. I take care of the boilerplate code so you can keep shipping.
           </p>
           <Link href='#pricing' className="btn btn-primary">Get ShipMyApp</Link>
         </div>

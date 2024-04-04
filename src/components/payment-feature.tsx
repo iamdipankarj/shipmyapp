@@ -22,7 +22,7 @@ export function PaymentFeature({
     <section className={cn("py-16 md:py-20", className)} {...props}>
       <div className="container">
         <FeatureContainer>
-          <FeatureContent order='reverse'>
+          <FeatureContent>
             <FeatureBadge>15 Hours Saved</FeatureBadge>
             <FeatureHeader>Payments</FeatureHeader>
             <FeatureDescription>Collect payments from your users with ease. We support both subscriptions and one-time payments. ShipMyApp supports both <strong>Stripe</strong> and <strong>LemonSqueezy</strong> out of the box.</FeatureDescription>
@@ -38,7 +38,7 @@ export function PaymentFeature({
               </FeatureListItem>
             </FeatureListContainer>
           </FeatureContent>
-          <FeatureImage order='reverse' imagePath="/features/signin.png" imageHeight={1080} imageWidth={900} />
+          <FeatureImage imagePath="/features/signin.png" imageHeight={1080} imageWidth={900} />
         </FeatureContainer>
       </div>
     </section>

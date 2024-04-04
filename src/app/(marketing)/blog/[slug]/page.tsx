@@ -1,8 +1,9 @@
+import React from "react";
+import Head from 'next/head';
 import Link from "next/link";
 import Image from "next/image";
 import { Category } from "@/components/category";
 import { getPostBySlug } from "@/lib/mdx";
-import React from "react";
 import { ReadingProgress } from "@/components/reading-progress";
 
 const getPageContent = async (slug: string) => {
@@ -24,6 +25,10 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   return (
     <main className="min-h-screen">
       <ReadingProgress />
+      <Head>
+        <title>{metaData.title}</title>
+        <meta name="description" content={metaData.excerpt} />
+      </Head>
       <div className="container px-8 mx-auto xl:px-5 max-w-screen-lg">
         <div className="mx-auto max-w-screen-md ">
           {Array.isArray(metaData.categories) ? (
@@ -56,11 +61,11 @@ export default async function BlogPost({ params }: { params: { slug: string } })
                 </Link>
               </div>
               <div>
-                <p className="text-gray-800">
+                <p className="text-base-content/70">
                   <Link href={`/blog/author/${metaData.author.toLowerCase().replaceAll(" ", "-")}`}>{metaData.author}</Link>
                 </p>
                 <div className="flex items-center space-x-2 text-sm">
-                  <time className="text-gray-500" dateTime={metaData.date}>
+                  <time className="text-base-content/70" dateTime={metaData.date}>
                     {metaData.date}
                   </time>
                   <span>· 2 min read</span>
@@ -90,7 +95,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             ← View all posts
           </Link>
         </div>
-        <div className="px-8 py-8 mt-10 rounded-2xl bg-base-300/50">
+        <div className="px-8 py-8 mt-10 rounded-2xl bg-base-200/50">
           <div className="flex flex-wrap items-start sm:space-x-6 sm:flex-nowrap">
             <div className="relative flex-shrink-0 w-24 h-24 mt-1 ">
               <Link href={getAuthorLink()}>

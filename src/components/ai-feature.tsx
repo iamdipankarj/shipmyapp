@@ -21,7 +21,7 @@ export function AIFeature({
     <section className={cn("py-16 md:py-20", className)} {...props}>
       <div className="container">
         <FeatureContainer>
-          <FeatureContent order='reverse'>
+          <FeatureContent>
             <FeatureBadge>72 Hours Saved</FeatureBadge>
             <FeatureHeader>OpenAI Integration</FeatureHeader>
             <FeatureDescription>Want to build a chatbot or a language model? ShipMyApp uses OpenAI to help you build AI-powered applications.</FeatureDescription>
@@ -34,7 +34,7 @@ export function AIFeature({
               </FeatureListItem>
             </FeatureListContainer>
           </FeatureContent>
-          <FeatureImage order='reverse' imagePath="/features/llm.gif" imageHeight={1080} imageWidth={900} />
+          <FeatureImage imagePath="/features/llm.gif" imageHeight={1080} imageWidth={900} />
         </FeatureContainer>
       </div>
     </section>

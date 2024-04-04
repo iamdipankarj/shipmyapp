@@ -23,7 +23,7 @@ export function AuthenticationFeature({
     <section className={cn("py-16 md:py-20", className)} {...props}>
       <div className="container">
         <FeatureContainer>
-          <FeatureContent>
+          <FeatureContent order="reverse">
             <FeatureBadge>15 Hours Saved</FeatureBadge>
             <FeatureHeader>User Authentication</FeatureHeader>
             <FeatureDescription>Sign up and login pages without the hassle of setting them up.</FeatureDescription>
@@ -42,7 +42,7 @@ export function AuthenticationFeature({
               </FeatureListItem>
             </FeatureListContainer>
           </FeatureContent>
-          <FeatureImage imagePath="/features/signin.png" imageHeight={1080} imageWidth={900} />
+          <FeatureImage order="reverse" imagePath="/features/signin.png" imageHeight={1080} imageWidth={900} />
         </FeatureContainer>
       </div>
     </section>
