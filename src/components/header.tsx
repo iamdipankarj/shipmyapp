@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Hamburger } from "@/components/hamburger";
-import { UserNav } from "@/components/user-nav";
+// import { UserNav } from "@/components/user-nav";
 import { cn } from "@/lib/utils";
+import { SupabaseUserNav } from "@/components/supabase/supabase-user-nav";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -52,7 +53,8 @@ export function Header() {
               <Link href="/blog" className="btn btn-ghost btn-sm">
                 Blog
               </Link>
-              <UserNav />
+              {/* <UserNav /> */}
+              <SupabaseUserNav />
             </div>
             <Hamburger className="md:hidden" />
           </nav>

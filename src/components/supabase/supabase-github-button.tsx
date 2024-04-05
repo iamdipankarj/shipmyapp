@@ -11,14 +11,12 @@ interface SupabaseGithubButtonProps extends React.ButtonHTMLAttributes<HTMLButto
 export function SupabaseGithubButton({
   className,
   children,
-  formAction,
   ...props
 }: SupabaseGithubButtonProps) {
-  const { pending, action } = useFormStatus();
-  const isLoading = pending && action === formAction;
+  const { pending } = useFormStatus();
 
   return (
-    <button className={cn("btn btn-outline")} disabled={pending} {...props}>
+    <button className={cn("btn btn-outline", className)} disabled={pending} {...props}>
       {pending ? (
         <Icons.spinner className="h-4 w-4 animate-spin" />
       ) : (

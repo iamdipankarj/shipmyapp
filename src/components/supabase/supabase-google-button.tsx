@@ -11,15 +11,13 @@ interface SupabaseGoogleButtonProps extends React.ButtonHTMLAttributes<HTMLButto
 export function SupabaseGoogleButton({
   className,
   children,
-  formAction,
   ...props
 }: SupabaseGoogleButtonProps) {
-  const { pending, action } = useFormStatus();
-  const isLoading = pending && action === formAction;
+  const { pending } = useFormStatus();
 
   return (
-    <button className={cn("btn btn-outline")} disabled={isLoading} {...props}>
-      {isLoading ? (
+    <button className={cn("btn btn-outline", className)} disabled={pending} {...props}>
+      {pending ? (
         <Icons.spinner className="h-4 w-4 animate-spin" />
       ) : (
         <Icons.googleColored className="h-4 w-4" />

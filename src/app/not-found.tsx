@@ -10,7 +10,8 @@ export default function NotFound() {
           alt="404"
           width={300}
           height={300}
-          className="mx-auto"
+          className="mx-auto w-80 h-80"
+          priority
         />
         <h2 className="text-4xl md:text-6xl text-red-500 text-center font-bold font-heading transform -rotate-3 tracking-px-2n mt-4">
           404!

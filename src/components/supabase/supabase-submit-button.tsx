@@ -11,11 +11,10 @@ interface SupabaseSubmitButtonProps extends React.ButtonHTMLAttributes<HTMLButto
 export function SupabaseSubmitButton({
   className,
   children,
-  formAction,
   ...props
 }: SupabaseSubmitButtonProps) {
   const { pending, action } = useFormStatus();
-  const isLoading = pending && action === formAction;
+  const isLoading = pending && action === props.formAction;
 
   return (
     <button className={cn("btn btn-primary")} disabled={isLoading} {...props}>
