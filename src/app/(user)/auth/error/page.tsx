@@ -17,7 +17,7 @@ export default function AuthError() {
   }
 
   return (
-    <main className="flex flex-col h-screen p-6 justify-center items-center bg-base-200">
+    <main className="flex flex-col min-h-screen p-6 justify-center items-center bg-base-200">
       <div className="w-full md:w-1/3 mx-auto">
         <div className="flex flex-col p-6 rounded-2xl bg-base-100">
           <div className="flex flex-col items-center text-center gap-2">
