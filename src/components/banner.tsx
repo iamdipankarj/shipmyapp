@@ -57,10 +57,4 @@ export function Banner({
       </div>
     </section>
   )
-
-  return (
-    <div className={cn("block", className)} {...props}>
-      Hello Banner
-    </div>
-  )
 }
