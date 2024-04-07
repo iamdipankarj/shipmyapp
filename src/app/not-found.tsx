@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <main className="flex flex-col h-screen p-6 justify-center items-center">
+    <main className="flex flex-col min-h-screen p-6 justify-center items-center">
       <div className="container px-4 mx-auto">
         <Image
           src="/404.svg"

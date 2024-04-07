@@ -19,7 +19,7 @@ export default function CheckoutSuccess() {
   }, [])
 
   return (
-    <main className="flex flex-col h-screen p-6 justify-center items-center bg-base-200">
+    <main className="flex flex-col min-h-screen p-6 justify-center items-center bg-base-200">
       <div className="w-full md:w-1/3 mx-auto">
         <Transition
           as={Fragment}
