@@ -30,7 +30,7 @@ export function SupabaseUserNav() {
             <Menu.Button className="btn btn-ghost btn-sm">
               {image ? (
                 <div className="avatar">
-                  <div className="w-5 rounded-full">
+                  <div className="w-4 rounded-full">
                     <Image
                       width={32}
                       height={32}
@@ -43,7 +43,7 @@ export function SupabaseUserNav() {
               ) : (
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content rounded-full w-8">
-                    <User className="w-5 h-5" />
+                    <User className="w-4 h-4" />
                   </div>
                 </div>
               )}

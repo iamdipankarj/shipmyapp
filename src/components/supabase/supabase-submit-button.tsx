@@ -13,12 +13,11 @@ export function SupabaseSubmitButton({
   children,
   ...props
 }: SupabaseSubmitButtonProps) {
-  const { pending, action } = useFormStatus();
-  const isLoading = pending && action === props.formAction;
+  const { pending } = useFormStatus();
 
   return (
-    <button className={cn("btn btn-primary")} disabled={isLoading} {...props}>
-      {isLoading ? (
+    <button className={cn("btn btn-primary", className)} disabled={pending} {...props}>
+      {pending ? (
         <Icons.spinner className="h-4 w-4 animate-spin" />
       ) : null}
       {children}
