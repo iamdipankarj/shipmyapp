@@ -42,7 +42,7 @@ export function getMetaData({
       siteName: "ShipMyApp",
       images: [
         {
-          url: `${process.env.HOST_NAME}/banner.png`,
+          url: `${process.env.HOST_NAME}/open-graph-image.png`,
           width: 1200,
           height: 630,
           alt: "ShipMyApp"
