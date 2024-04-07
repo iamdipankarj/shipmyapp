@@ -13,7 +13,7 @@ export default async function Login() {
   }
 
   return (
-    <main className="flex flex-col min-h-screen p-6 justify-center items-center">
+    <main className="app-main">
       <div className="mb-5 text-center">
         <h1 className="text-2xl font-semibold tracking-tight">
           Sign In
