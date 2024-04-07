@@ -60,7 +60,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <main className="flex flex-col min-h-screen p-6 justify-center items-center bg-base-200/80">
+    <main className="app-main bg-base-200/80">
       <form onSubmit={handleSubmit} className="flex flex-col p-6 items-center rounded-2xl bg-base-100 w-full md:w-1/3 mx-auto space-y-4">
         <div className="bg-neutral text-neutral-content rounded-full">
           <Image
