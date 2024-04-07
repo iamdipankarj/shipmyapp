@@ -1,31 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { SupabaseSubmitButton } from "@/components/supabase/supabase-submit-button";
 import { AuthConsent } from "@/components/auth-consent";
 import { resetPasswordForEmail } from "@/utils/supabase/actions";
 import { useSearchParams } from "next/navigation";
 
 export default function SupabaseResetPassword() {
-  const [newPassword, setNewPassword] = useState<string>("")
-  const [confirmNewPassword, setConfirmNewPassword] = useState<string>("")
-  const [loading, setLoading] = useState<boolean>(false)
   const searchParams = useSearchParams()
   const email = searchParams.get("email")
-
-  const handleNewPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewPassword(e.target.value)
-  }
-
-  const handleConfirmNewPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setConfirmNewPassword(e.target.value)
-  }
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
-    setLoading(false)
-  }
 
   return (
     <main className="app-main">
@@ -52,28 +34,7 @@ export default function SupabaseResetPassword() {
                 id="password"
                 name="password"
                 className="input input-bordered w-full"
-                value={newPassword}
-                onChange={handleNewPassword}
                 placeholder="Password"
-                autoCapitalize="none"
-                autoComplete="off"
-                autoCorrect="off"
-                required
-              />
-            </label>
-            {/* Password */}
-            <label className="form-control w-full">
-              <div className="label">
-                <span className="label-text">Confirm Password</span>
-              </div>
-              <input
-                type="password"
-                id="confirmPassword"
-                name="confirmPassword"
-                className="input input-bordered w-full"
-                value={confirmNewPassword}
-                onChange={handleConfirmNewPassword}
-                placeholder="Confirm Password"
                 autoCapitalize="none"
                 autoComplete="off"
                 autoCorrect="off"
