@@ -18,7 +18,7 @@ export default function SupabaseLogin() {
   const [showPassword, setShowPassword] = useState<boolean>(false)
 
   return (
-    <main className="flex flex-col h-screen p-6 justify-center items-center">
+    <main className="app-main">
       {wasPasswordReset ? (
         <div className="text-white text-sm bg-primary px-2 py-2 fixed top-0 left-0 right-0 text-center z-50">
           Your password has been reset. Please login with your new password.

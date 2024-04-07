@@ -35,7 +35,7 @@ export default function SupabaseVerifyEmail() {
   }
 
   return (
-    <main className="flex flex-col h-screen p-6 justify-center items-center">
+    <main className="app-main">
       <div className="text-sm text-base-content/60 flex flex-col items-center gap-2">
         {loading ? (
           <Loader2 className="w-10 h-10 animate-spin text-primary" />
