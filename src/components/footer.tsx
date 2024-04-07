@@ -14,7 +14,7 @@ export function Footer() {
               <br />
               Made with ❤️ by <a href="https://twitter.com/iamdipankarj" className="link link-primary" target="_blank" rel="nofollow">@iamdipankarj</a>
             </p>
-            <a
+            <Link
               className="inline-block mt-4 text-sm border border-base-content/20 hover:border-base-content/40 hover:text-base-content/90 hover:bg-base-300 duration-200 cursor-pointer rounded text-base-content/80 px-2 py-1"
               href="/"
             >
@@ -29,7 +29,7 @@ export function Footer() {
                 />
                 <span className="font-bold text-base-content flex gap-0.5 items-center tracking-tight">ShipMyApp</span>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="flex-grow flex flex-wrap md:pl-24 -mb-10 md:mt-0 mt-10 text-center md:text-left">
             <div className="lg:w-1/3 md:w-1/2 w-full px-4">
@@ -37,22 +37,19 @@ export function Footer() {
                 LINKS
               </div>
               <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                <a className="link link-hover" href="/#pricing">
+                <Link className="link link-hover" href="/#pricing">
                   Pricing
-                </a>
-                <a className="link link-hover" href="/license">
-                  Licenses
-                </a>
-                <a className="link link-hover" href="/docs">
+                </Link>
+                <Link className="link link-hover" target="_blank" href="https://docs.shipmyapp.com/">
                   Documentation
-                </a>
-                <a
-                  href="mailto:marc@shipfa.st"
+                </Link>
+                <Link
+                  href="mailto:iamdipankarj.workspace@gmail.com"
                   target="_blank"
                   className="link link-hover"
                 >
                   Support
-                </a>
+                </Link>
               </div>
             </div>
             <div className="lg:w-1/3 md:w-1/2 w-full px-4">
@@ -70,16 +67,15 @@ export function Footer() {
             </div>
             <div className="lg:w-1/3 md:w-1/2 w-full px-4">
               <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
-                TEMPLATES
+                Links
               </div>
               <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                <a
-                  href="https://launchvir.al/template"
-                  target="_blank"
+                <Link
+                  href="#"
                   className="link link-hover"
                 >
-                  Course
-                </a>
+                  Custom Link
+                </Link>
               </div>
             </div>
           </div>
