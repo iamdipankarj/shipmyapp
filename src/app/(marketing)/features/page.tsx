@@ -7,13 +7,32 @@ import { Masonry } from "@/components/masonry";
 import { Modal } from '@/components/modal';
 import { Tab } from "@/components/tab";
 import { TabContainer } from "@/components/tab-container";
+import { useTypingEffect } from "@/hooks/use-typing-effect";
 import Link from "next/link";
 import { useState } from "react";
-import { toast } from "sonner";
+
+const texts = [
+  "A mysterious forest cloaked in twilight.",
+  "A futuristic cityscape bustling with energy.",
+  "A tranquil beach at sunrise, with pastel hues.",
+  "An enchanted castle atop a misty mountain.",
+  "A cosmic voyage through swirling galaxies.",
+  "A vibrant marketplace alive with colors and culture.",
+  "A surreal dreamscape filled with floating islands.",
+  "A majestic waterfall cascading into a serene pool.",
+  "A magical garden blooming with fantastical flora.",
+  "A bustling metropolis seen from above, aglow with city lights."
+];
 
 export default function Features() {
   const [confirmOpen, setConfirmOpen] = useState(false)
   const [selectedTab, setSelectedTab] = useState(1)
+
+  const { textToShow } = useTypingEffect({
+    isTypeByLetter: true,
+    duration: 50,
+    texts
+  });
 
   const handleModalClick = () => {
     setConfirmOpen(true);
@@ -127,6 +146,20 @@ export default function Features() {
             <button className="btn btn-active btn-ghost">Ghost</button>
             <button className="btn btn-active btn-link">Link</button>
           </div>
+        </div>
+      </section>
+      {/* Typing Effect */}
+      <section className="py-12">
+        <div className="container flex-col flex items-center gap-7 justify-center">
+          <h2 className="font-semibold text-2xl">Typing Effect</h2>
+          <pre className="inline-flex bg-base-200 rounded-md px-2 shadow-sm border border-base-content/40">
+            <code>{decodeURIComponent(`const { textToShow } = useTypingEffect({
+  isTypeByLetter: true,
+  duration: 50,
+  texts: ["Text 1", "Text 2", "Text 3"]
+});`)}</code>
+          </pre>
+          <h3 className="font-semibold text-xl">{textToShow}</h3>
         </div>
       </section>
     </main>

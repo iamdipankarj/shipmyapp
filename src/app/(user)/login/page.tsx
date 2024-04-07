@@ -21,7 +21,7 @@ export default async function Login() {
         <p className="text-sm text-base-content/80 mt-1">Hi, Welcome back 👋</p>
       </div>
       <UserAuthForm />
-      <AuthConsent />
+      <AuthConsent className="mt-4" />
     </main>
   );
 }

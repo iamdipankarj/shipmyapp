@@ -32,6 +32,14 @@ body, html {
     @apply flex flex-col min-h-screen p-6 justify-center items-center;
   }
 
+  .dashboard-main {
+    @apply min-h-screen pt-14 pl-64;
+  }
+
+  .dashboard-content {
+    @apply p-4 min-h-[calc(100vh-3.5rem)];
+  }
+
   .container {
     @apply mx-auto px-4 md:px-12 max-w-screen-lg;
   }
