@@ -26,10 +26,10 @@ export function DashboardSidebar({
   const pathname = usePathname();
 
   return (
-    <aside className={cn("fixed bottom-0 left-0 top-14 min-w-64 bg-base-100 shadow-md", className)} {...props}>
+    <aside className={cn("fixed bottom-0 left-0 top-14 w-64 bg-base-100 shadow-md", className)} {...props}>
       <div className="space-y-1 py-4 px-4">
         {paths.map((path) => (
-          <Link key={path.href} href={path.href} className={cn("btn btn-ghost justify-start text-left btn-md w-full", {
+          <Link key={path.href} href={path.href} className={cn("btn break-all btn-ghost justify-start text-left btn-md w-full", {
             'btn-active': path.href === pathname
           })}>{path.name}</Link>
         ))}
