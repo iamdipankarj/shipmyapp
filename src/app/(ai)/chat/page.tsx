@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { useChat } from 'ai/react';
-import { Bot, SendHorizonal, SendIcon, User } from 'lucide-react';
+import { Bot, SendHorizonal, User } from 'lucide-react';
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();

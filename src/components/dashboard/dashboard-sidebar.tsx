@@ -14,6 +14,10 @@ const paths = [
     href: '/dashboard',
   },
   {
+    name: 'Text to Image',
+    href: '/text-to-image'
+  },
+  {
     name: 'Settings',
     href: '/settings',
   }
