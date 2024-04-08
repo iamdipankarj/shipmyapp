@@ -1,6 +1,4 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getFormattedError } from "@/lib/errorHandler";
-import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
 export const maxDuration = 300;
@@ -12,17 +10,7 @@ const modelList: Record<string, string> = {
   photomaker: "ddfc2b08d209f9fa8c1eca692712918bd449f695dabb4a958da31802a9570fe4"
 };
 
-export async function POST(req: Request, res: Response) {
-  const session = await getServerSession(req as any, res as any, authOptions)
-
-  // Check if user is logged in
-  if (!session) {
-    return NextResponse.json(
-      { message: "unauthorized" },
-      { status: 401 }
-    )
-  }
-  
+export async function POST(req: Request, res: Response) {  
   try {
 
     // Do the magic here

@@ -14,6 +14,10 @@ const paths = [
     href: '/dashboard',
   },
   {
+    name: 'OpenAI Chat',
+    href: '/chat'
+  },
+  {
     name: 'Text to Image',
     href: '/text-to-image'
   },

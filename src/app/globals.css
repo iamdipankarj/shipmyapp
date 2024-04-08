@@ -40,6 +40,10 @@ body, html {
     @apply p-4 min-h-[calc(100vh-3.5rem)];
   }
 
+  .grid-container {
+    @apply grid gap-2 md:gap-4 grid-rows-[repeat(2,auto)] grid-cols-[repeat(2,auto)] mx-auto md:max-w-4xl
+  }
+
   .container {
     @apply mx-auto px-4 md:px-12 max-w-screen-lg;
   }

@@ -1,11 +1,9 @@
 "use client";
-import { FormEvent, useEffect, useState } from "react";
-import Image from "next/image";
+import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 import { ImagePreview } from "@/components/image-preview";
 import { cn } from "@/lib/utils";
 import { GenerateButton } from "@/components/generate-button";
-import { PromptGuide } from "@/components/prompt-guide";
 import { PromptBox } from "@/components/prompt-box";
 import { Select } from "@/components/select";
 
@@ -106,8 +104,7 @@ export default function TextToImage({
 
   return (
     <main className="dashboard-main">
-      <div className="dashboard-content flex items-center justify-center flex-col">
-        
+      <div className="dashboard-content flex items-center flex-col">
         <div className="flex flex-col md:flex-row items-start gap-6">
           <div className="space-y-4 w-full md:basis-1/3">
             <div>
@@ -117,8 +114,7 @@ export default function TextToImage({
                 onPromptChange={handlePromptChange}
               />
               <div className="text-xs leading-4 block mt-5">
-                Enter the text you want to generate an image from. You can enter a maximum of 1000 characters. <PromptGuide>
-                <p>Provide a concise and clear description of the image you want generated. Include details such as objects, settings, actions, and any specific attributes you desire. Be as specific as possible in your description to guide the AI in generating the desired image accurately. Include relevant dimensions, colors, textures, and any other important visual elements.</p><p><span className="font-semibold">Example:&nbsp;</span>An Image depicting a serene lakeside cabin nestled in a dense forest during autumn. The cabin should be a cozy wooden structure with a stone chimney, surrounded by vibrant fall foliage in shades of red, orange, and yellow.</p></PromptGuide>.
+                Enter the text you want to generate an image from. You can enter a maximum of 1000 characters.
               </div>
             </div>
             <Select
