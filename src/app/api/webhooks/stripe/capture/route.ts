@@ -40,6 +40,32 @@ const webhookHandler = async (req: NextRequest) => {
     const subscription = event.data.object as Stripe.Subscription;
 
     switch (event.type) {
+      case "checkout.session.completed":
+        const completedEvent: any = event.data.object
+        const productId = completedEvent.metadata.productId;
+        const userId = completedEvent.metadata.userId;
+
+        try {
+          await prisma.purchase.create({
+            data: {
+              productId,
+              currency: completedEvent.currency,
+              price: completedEvent.amount_total,
+              user: {
+                connect: {
+                  id: userId
+                }
+              }
+            }
+          });
+        } catch (error) {
+          return NextResponse.json(
+            { message: "Webhook handler failed" },
+            { status: 500 },
+          )
+        }
+
+        break;
       case "customer.subscription.created":
         await prisma.user.update({
           // Find the customer in our database with the Stripe customer ID linked to this purchase
@@ -51,21 +77,6 @@ const webhookHandler = async (req: NextRequest) => {
             isSubscribed: true
           },
         });
-
-        // await prisma.subscription.create({
-        //   data: {
-        //     userId: subscription.customer as string,
-        //     stripeSubscriptionId: subscription.id,
-        //     status: subscription.status,
-        //     planId: "",
-        //     amount: subscription.items.data[0].price.unit_amount!,
-        //     currency: subscription.items.data[0].price.currency,
-        //     interval: subscription.items.data[0].price.recurring?.interval!,
-        //     startDate: new Date(subscription.current_period_start * 1000),
-        //     endDate: new Date(subscription.current_period_end * 1000),
-        //     // priceId: subscription.items.data[0].price.id,
-        //   },
-        // });
         break;
       case "customer.subscription.deleted":
         await prisma.user.update({

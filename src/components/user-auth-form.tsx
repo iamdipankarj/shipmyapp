@@ -14,7 +14,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [googleLoading, setGoogleLoading] = useState<boolean>(false)
   const [githubLoading, setGithubLoading] = useState<boolean>(false)
-  const callbackUrl = searchParams.get('callbackUrl') || '/'
+  const callbackUrl = searchParams.get('callbackUrl') || '/dashboard'
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value)
@@ -45,29 +45,25 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   }
 
   return (
-    <div className={cn("flex flex-col gap-6 md:min-w-72", className)} {...props}>
-      <form onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-2">
-          <input
-            type="text"
-            className="input input-bordered w-full max-w-xs"
-            onChange={handleEmailChange}
-            value={email}
-            placeholder="name@example.com"
-            autoCapitalize="none"
-            autoComplete="email"
-            autoCorrect="off"
-            disabled={isLoading || googleLoading}
-            required
-          />
-          <button className="btn btn-primary" disabled={isLoading}>
-            {isLoading && (
-              <Icons.spinner className="h-4 w-4 animate-spin" />
-            )}
-            Sign In with Email
-          </button>
-        </div>
-      </form>
+    <div className={cn("flex flex-col gap-6 md:min-w-96", className)} {...props}>
+      <div className="flex flex-row gap-2">
+        <button className="btn btn-outline flex-1" type="button" disabled={googleLoading} onClick={onGoogleSubmit}>
+          {googleLoading ? (
+            <Icons.spinner className="h-4 w-4 animate-spin" />
+          ) : (
+            <Icons.googleColored className="h-4 w-4" />
+          )}{" "}
+          Google
+        </button>
+        <button className="btn btn-outline flex-1" type="button" disabled={githubLoading} onClick={onGithubSubmit}>
+          {githubLoading ? (
+            <Icons.spinner className="h-4 w-4 animate-spin" />
+          ) : (
+            <Icons.gitHub className="h-4 w-4" />
+          )}{" "}
+          Github
+        </button>
+      </div>
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
@@ -78,22 +74,35 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <button className="btn btn-outline" type="button" disabled={googleLoading} onClick={onGoogleSubmit}>
-        {googleLoading ? (
-          <Icons.spinner className="h-4 w-4 animate-spin" />
-        ) : (
-          <Icons.googleColored className="h-4 w-4" />
-        )}{" "}
-        Google
-      </button>
-      <button className="btn btn-outline" type="button" disabled={githubLoading} onClick={onGithubSubmit}>
-        {githubLoading ? (
-          <Icons.spinner className="h-4 w-4 animate-spin" />
-        ) : (
-          <Icons.gitHub className="h-4 w-4" />
-        )}{" "}
-        Github
-      </button>
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-2">
+          <label className="form-control w-full">
+            <div className="label">
+              <span className="label-text">Email</span>
+            </div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              onChange={handleEmailChange}
+              value={email}
+              className="input input-bordered w-full"
+              placeholder="name@example.com"
+              autoCapitalize="none"
+              autoComplete="email"
+              autoCorrect="off"
+              required
+            />
+          </label>
+
+          <button className="btn btn-primary" disabled={isLoading}>
+            {isLoading && (
+              <Icons.spinner className="h-4 w-4 animate-spin" />
+            )}
+            Sign In with Email
+          </button>
+        </div>
+      </form>
     </div>
   )
 }

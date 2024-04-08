@@ -1,7 +1,7 @@
 "use client";
 
 import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon, CreditCard, LogOut, User, UserCircleIcon } from 'lucide-react'
+import { ChevronDownIcon, CreditCard, Gauge, LogOut, User, UserCircleIcon } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react';
 import { Fragment } from 'react'
 import { cn } from '@/lib/utils';
@@ -59,10 +59,16 @@ export function UserNav() {
                     </Link>
                   </Menu.Item>
                   <Menu.Item>
-                    <button className="btn btn-ghost btn-sm w-full rounded-md text-sm justify-start">
+                    <Link href="/dashboard" className="btn btn-ghost btn-sm w-full rounded-md text-sm justify-start">
+                      <Gauge className="w-5 h-5" />
+                      Dashboard
+                    </Link>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <Link href="/billing" className="btn btn-ghost btn-sm w-full rounded-md text-sm justify-start">
                       <CreditCard className="w-5 h-5" />
                       Billing
-                    </button>
+                    </Link>
                   </Menu.Item>
                 </div>
                 <div className="px-1 py-1">

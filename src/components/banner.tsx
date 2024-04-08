@@ -43,7 +43,7 @@ export function Banner({
             <div className="order-1 lg:order-2">
               <div className="relative 2xl:w-[128%]">
                 <Image
-                  src="/banner1.png"
+                  src="/features/banner.png"
                   alt="ShipMyApp Banner"
                   className="w-full h-full p-2 rounded-lg"
                   width={1080}
@@ -56,11 +56,5 @@ export function Banner({
         </div>
       </div>
     </section>
-  )
-
-  return (
-    <div className={cn("block", className)} {...props}>
-      Hello Banner
-    </div>
   )
 }

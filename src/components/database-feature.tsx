@@ -1,7 +1,14 @@
 import { DatabaseZap, Pyramid, Tent } from 'lucide-react'
 import React from 'react'
-import Image from 'next/image'
 import { cn } from "@/lib/utils"
+import { FeatureHeader } from '@/components/feature/feature-header'
+import { FeatureDescription } from '@/components/feature/feature-description'
+import { FeatureBadge } from '@/components/feature/feature-badge'
+import { FeatureListContainer } from '@/components/feature/feature-list-container'
+import { FeatureListItem } from '@/components/feature/feature-list-item'
+import { FeatureContainer } from '@/components/feature/feature-container'
+import { FeatureContent } from '@/components/feature/feature-content'
+import { FeatureImage } from '@/components/feature/feature-image'
 
 interface DatabaseFeatureProps extends React.HTMLAttributes<HTMLDivElement> {
 }
@@ -13,47 +20,25 @@ export function DatabaseFeature({
   return (
     <section className={cn("py-16 md:py-20", className)} {...props}>
       <div className="container">
-        <div className="grid lg:grid-cols-2 grid-cols-1 2xl:gap-24 gap-10 items-center">
-          <div className="order-2 lg:order-2">
-            <span className="text-sm bg-red-500/10 text-red-600 rounded-full px-3 py-1">
-              15 Hours Saved
-            </span>
-            <h1 className="text-3xl/tight font-medium mt-3 mb-4">
-              Database Integration
-            </h1>
-            <p className="text-gray-500">Fully featured database with Prisma ORM, without a blink of SQL.</p>
-            <div className="flex flex-col gap-4 mt-10">
-              <div className="flex items-center gap-4">
-                <div className="feature-icon">
-                  <Tent className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-medium">Works with MySQL, Postgres, MongoDB and more.</h3>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="feature-icon">
-                  <Pyramid className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-medium">Simplicity of Prisma schema</h3>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="feature-icon">
-                  <DatabaseZap className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-medium">Create complex queries with ease</h3>
-              </div>
-            </div>
-          </div>
-          <div className="order-1 lg:order-1">
-            <Image
-              src="/database.png"
-              alt="ShipMyApp Banner"
-              className="w-full h-full p-2 rounded-lg"
-              width={1479}
-              height={1204}
-              priority
-            />
-          </div>
-        </div>
+        <FeatureContainer>
+          <FeatureContent order="reverse">
+            <FeatureBadge>15 Hours Saved</FeatureBadge>
+            <FeatureHeader>Database Integration</FeatureHeader>
+            <FeatureDescription>Fully featured database with Prisma ORM, without a blink of SQL.</FeatureDescription>
+            <FeatureListContainer>
+              <FeatureListItem icon={<Tent className="h-6 w-6 text-primary" />}>
+                Works with MySQL, Postgres, MongoDB and more.
+              </FeatureListItem>
+              <FeatureListItem icon={<Pyramid className="h-6 w-6 text-primary" />}>
+                Simplicity of Prisma schema
+              </FeatureListItem>
+              <FeatureListItem icon={<DatabaseZap className="h-6 w-6 text-primary" />}>
+                Create complex queries with ease
+              </FeatureListItem>
+            </FeatureListContainer>
+          </FeatureContent>
+          <FeatureImage order="reverse" imagePath="/features/database.png" imageHeight={1204} imageWidth={1479} />
+        </FeatureContainer>
       </div>
     </section>
   )

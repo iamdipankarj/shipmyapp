@@ -27,7 +27,7 @@ const solutions = [
 
 export function ButtonPopover() {
   return (
-    <div className="w-full max-w-sm px-4">
+    <div className="max-w-sm px-4">
       <Popover className="relative">
         {({ open }) => (
           <>
