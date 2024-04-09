@@ -41,7 +41,7 @@ body, html {
   }
 
   .container {
-    @apply mx-auto px-4 md:px-12 max-w-screen-lg;
+    @apply mx-auto px-4 md:px-12 max-w-screen-xl;
   }
 
   .feature-icon {
